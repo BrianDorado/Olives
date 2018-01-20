@@ -1,0 +1,7 @@
+.nav-bar{
+    height: 10vh;
+    /* background: radial-gradient(ellipse at center, rgba(249, 252, 247, 1) 0%, rgba(245, 249, 240, 1) 100%); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

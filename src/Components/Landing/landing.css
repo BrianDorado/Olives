@@ -1,0 +1,19 @@
+.landing-container{
+    background-image: url('../../media/images/OliveValley.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.welcome-container{
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 12vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
