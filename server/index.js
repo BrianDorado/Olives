@@ -2,9 +2,9 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       session = require('express-session'),
-      config = require('./config'),
+      config = require('dotenv'),
       app = express(),
-      port = 3000;
+      port = 4000;
 
 
 // ========== MIDDLEWARE ========== //
@@ -27,7 +27,7 @@ app.use(session({
 
 // === GET REQUESTS === //
 
-// app.get()
+
 
 // === PUT REQUESTS === //
 

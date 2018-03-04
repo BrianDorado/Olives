@@ -7,7 +7,6 @@ class Landing extends Component {
     render() {
         return (
             <div>
-            <Header/>
             <div className='landing-container' >
                 <div className='welcome-container' >
                     <strong>Welcome</strong>

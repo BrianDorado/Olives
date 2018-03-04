@@ -2,7 +2,7 @@
     background-image: url('../../media/images/GreenOlives.jpg');
     background-size: cover;
     background-attachment: fixed;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: row-reverse;
     color: white;
