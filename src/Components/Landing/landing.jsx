@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../Header/header';
 import './landing.css'
-import OliveCards from '../OliveCards/oliveCards'
 
 class Landing extends Component {
     render() {
@@ -18,6 +16,3 @@ class Landing extends Component {
 }
 
 export default Landing;
-
-//hidden menu until they navigtate into another page, including the home
-// home page is different than landing

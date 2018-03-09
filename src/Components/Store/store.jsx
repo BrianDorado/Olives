@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../Header/header';
+import './store.css';
 import ProductCards from '../OliveCards/oliveCards';
 
 class Store extends Component {
@@ -14,8 +14,10 @@ class Store extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
+      <div className="app-store">
+        <aside>
+          <h2>Filters</h2>
+        </aside>
         <ProductCards />
       </div>
     );

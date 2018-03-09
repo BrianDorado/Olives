@@ -1,0 +1,11 @@
+.app-store {
+    /* height:100vh;
+    width: 100vw;  */
+    background-color: green; 
+    
+}
+
+aside {
+    float: left;
+    height: 100vw;
+}
