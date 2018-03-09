@@ -9,6 +9,8 @@ const express = require('express'),
 
 // ========== MIDDLEWARE ========== //
 
+massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstance))
+
 // ===== TOP LEVEL MIDDLEWARE ===== //
 
 app.use(bodyParser.json());
@@ -26,7 +28,7 @@ app.use(session({
 // ========== ENDPOINTS ========== //
 
 // === GET REQUESTS === //
-
+app.get('/products', )
 
 
 // === PUT REQUESTS === //

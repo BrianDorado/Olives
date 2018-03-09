@@ -1,5 +1,5 @@
 .landing-container{
-    background-image: url('../../media/images/GreenOlives.jpg');
+    background-image: url('../../../media/images/GreenOlives.jpg');
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;

@@ -1,0 +1,1 @@
+SELECT * FROM products WHERE id is not null; 
