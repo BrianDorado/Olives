@@ -21,15 +21,14 @@ class Store extends Component {
 
   render() {
     let products = this.state.productArr.map(items => {
-      return ( 
-        <ProductCards/>
-      )
-    })
+      return <ProductCards />;
+    });
     return (
       <div className="app-store">
         <aside>
           <h2>Filters</h2>
         </aside>
+        <section>{products}</section>
       </div>
     );
   }
