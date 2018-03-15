@@ -1,6 +1,7 @@
 .App-header {
   height: 10vh;
-  /* background: radial-gradient(ellipse at center, rgba(249, 252, 247, 1) 0%, rgba(245, 249, 240, 1) 100%); */
+  background: radial-gradient(ellipse at center, rgba(249, 252, 247, 1) 0%, rgba(245, 249, 240, 1) 100%);
+  position: sticky
 }
 
 .nav {

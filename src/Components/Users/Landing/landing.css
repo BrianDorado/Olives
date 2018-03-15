@@ -1,21 +1,16 @@
 .landing-container{
-    background-image: url('../../../media/images/GreenOlives.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+    background-color:#D1D4B7;
     height: 100vh;
-    display: flex;
-    flex-direction: row-reverse;
-    color: white;
 }
-.welcome-container{
-    height: 12vh;
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: center
+.Landing_image{
+    height: 100vh;
 }
-.welcome-container strong {
+
+.welcome-text {
     font-size: 55px;
     margin-right: 20vw;
-    margin-top: 20vh
+    margin-top: 20vh;
+    position: absolute;
+    top: 5px;
+    right: 5px
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import Store from '../Store/store';
+// import IconMenu from 'material-ui/IconMenu';
 import './header.css';
 
 class Header extends Component {

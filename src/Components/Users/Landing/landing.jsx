@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import './landing.css'
+import LandingImage from './../../../media/images/GreenOlives.jpg';
+import './landing.css';
 
 class Landing extends Component {
-    render() {
-        return (
-            <div>
-            <div className='landing-container' >
-                <div className='welcome-container' >
-                    <strong>Welcome</strong>
-                </div>
-            </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+        <div className="landing-container">
+          <img src={LandingImage} alt="LandingImage" className="Landing_image" />
+            <strong className='welcome-text' >Welcome</strong>
+        </div>
+    );
+  }
 }
 
 export default Landing;

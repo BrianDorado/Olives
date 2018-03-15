@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
@@ -5,9 +7,8 @@ const express = require('express'),
       massive = require('massive')
       products = require('./Controllers/Products/prodCont')
       app = express(),
-      port = 4000;
+      port = process.env.SERVER_PORT;
 
-require('dotenv').config()
 
 
 // ========== MIDDLEWARE ========== //
@@ -46,6 +47,6 @@ app.get('/api/products', products.getAllProducts)
 
 
 
-app.listen(port, () => {
+app.listen(port || 3090, () => {
     console.log(`listening on port ${port}`)
 })
