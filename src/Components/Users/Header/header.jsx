@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 
-class Header extends Component {
-  render() {
+const Header = () => {
     return (
       <div className="App-header">
-      <img src="" alt="App Logo"/>
+       <img src="" alt="App Logo"/>
           <Link to="/home">Home</Link>
           <Link to="/store">Store</Link>
           <Link to="/about">About</Link>
@@ -15,7 +14,6 @@ class Header extends Component {
           <Link to="/account">My Account</Link>
       </div>
     );
-  }
 }
 
 export default Header;

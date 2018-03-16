@@ -6,15 +6,20 @@ class filterBar extends Component {
     userInputValue: '',
     UserSelectValue: ''
   };
-  defineUserInput = () => {
+  defineUserInput = e => {
     this.setState({
-      userInputValue: this.refs.userInputValue.value
+      userInputValue: e.target.value
     });
   };
-  defineCategorySelection = () => {
+  defineCategorySelection = e => {
     this.setState({
-      UserSelectValue: this.refs.UserSelectValue.value
+      UserSelectValue: e.target.value
     });
+  };
+  filterProducts = () => {
+      console.log(this.state.userInputValue, this.state.UserSelectValue);
+    // this.defineUserInput();
+    // this.defineCategorySelection();
   };
 
   render() {
@@ -29,17 +34,28 @@ class filterBar extends Component {
           type="text"
           name="UserInput"
           id="userInputValue"
+          defaultValue={this.state.userInputValue}
           placeholder="Search"
+          onChange={this.defineUserInput}
           className="user-input-filter"
-          ref="userInputValue"
         />
         <br />
         <br />
-        <select name="Category" id="Cat-id" ref="userSelectValue">
+        <select
+          name="Category"
+          id="Cat-id"
+          defaultValue={this.state.UserSelectValue}
+          onClick={this.defineCategorySelection}
+          className="CategorySelector"
+        >
           <option value="Honey">Honey</option>
           <option value="Oil">Olive Oil</option>
           <option value="Vinegar"> Vinegar</option>
         </select>
+        <br />
+        <br />
+        <br />
+        <button onClick={this.filterProducts}>Search</button>
       </div>
     );
   }

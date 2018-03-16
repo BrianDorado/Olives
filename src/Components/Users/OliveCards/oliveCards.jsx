@@ -9,7 +9,7 @@ const style = {
 const OliveCards = props => {
   return (
     <div className='item-display' >
-      <Paper style={style} zDepth={3}>
+      <Paper style={style} >
         <img src={props.img} alt="product display"/>
         <section>
           <h3>Product Name</h3>
