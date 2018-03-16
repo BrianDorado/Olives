@@ -1,0 +1,12 @@
+.item-filter {
+    height: 100%;
+    width: 15vw; 
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+  /* position: fixed; */
+}
+.user-input-filter {
+  padding: 1%;
+}

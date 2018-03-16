@@ -1,11 +1,13 @@
 .App-header {
   height: 10vh;
-  background: radial-gradient(ellipse at center, rgba(249, 252, 247, 1) 0%, rgba(245, 249, 240, 1) 100%);
-  position: sticky
-}
-
-.nav {
+  /* background: radial-gradient(ellipse at center, rgba(249, 252, 247, 1) 0%, rgba(245, 249, 240, 1) 100%); */
+  background-color: #E9EDCB;
+  /* position: fixed;
+  width: 100%; */
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.App-header Link {
+  color: #734B4B
 }

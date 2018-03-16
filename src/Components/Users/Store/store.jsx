@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import './store.css';
-import Grid from 'material-ui/GridList';
-import axios from 'axios';
 import ProductCards from '../OliveCards/oliveCards';
+import FilterBar from '../FilterBar/filterBar';
+import Grid from 'material-ui/GridList';
 import Header from '../Header/header';
-// import CircularProgress from 'material-ui/CircularProgress';
-
-
+import axios from 'axios';
+import './store.css';
+// import CircularProgess from 'material-ui/CircularProgress'
 
 class Store extends Component {
   state = {
-    productArr: []
+    products: []
   };
 
   componentDidMount() {
     axios.get('http://localhost:3060/api/products').then(res => {
-      console.log(res.data);
       this.setState({
-        productArr: res.data
+        products: res.data
       });
     });
   }
 
   render() {
-    let products = this.state.productArr.map(item => {
+    let products = this.state.products.map(item => {
       return (
         <ProductCards
           key={item.id}
@@ -38,12 +36,12 @@ class Store extends Component {
     return (
       <div className="app-store">
         <Header />
-        <aside>
-          <h2>Filters</h2>
-          <input type="text" />
-        </aside>
-        {this.state.productArr.length === 0 ? (
-          <section>
+        <FilterBar />
+        {this.state.products.length === 0 ? (
+          <section className="loading-screen">
+            <br />
+            <br />
+            <br />
             <span>Loading...</span>
             {/* <CircularProgess/>  */}
           </section>

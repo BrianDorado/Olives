@@ -33,6 +33,8 @@ app.use(session({
 
 // === GET REQUESTS === //
 app.get('/api/products', products.getAllProducts)
+app.get('api/product-by/:caty')
+app.get('/api')
 
 
 // === PUT REQUESTS === //
@@ -47,6 +49,6 @@ app.get('/api/products', products.getAllProducts)
 
 
 
-app.listen(port || 3090, () => {
+app.listen(port || 3060, () => {
     console.log(`listening on port ${port}`)
 })

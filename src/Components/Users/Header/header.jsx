@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
-import Store from '../Store/store';
-// import IconMenu from 'material-ui/IconMenu';
+import { Link } from 'react-router-dom';
 import './header.css';
 
 class Header extends Component {
   render() {
     return (
       <div className="App-header">
-        <Switch>
-          <Route path="c/store" component={Store} />
-        </Switch>
-        <nav className="nav">
+      <img src="" alt="App Logo"/>
           <Link to="/home">Home</Link>
           <Link to="/store">Store</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/cart">Cart</Link>
-        </nav>
+          <Link to="/account">My Account</Link>
       </div>
     );
   }
