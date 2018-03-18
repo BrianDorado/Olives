@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper';
 const style = {
   height:350,
   width: 300,
-  margin: 40
+  margin: 30
 }
 
 const OliveCards = props => {

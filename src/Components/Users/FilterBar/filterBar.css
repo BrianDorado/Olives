@@ -1,5 +1,5 @@
 .item-filter {
-    min-height: 90vh;
+    min-height: 100%;
     width: 15vw; 
     float: left;
     display: flex;
