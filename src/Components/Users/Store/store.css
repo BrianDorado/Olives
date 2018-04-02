@@ -8,6 +8,10 @@
 .loading-screen span {
   font-size: 30px;
 }
+.product-display {
+  display: flex;
+  
+}
 .item-display img{
  margin-top: 12vh;
 }

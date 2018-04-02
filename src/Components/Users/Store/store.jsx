@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import ProductCards from '../OliveCards/oliveCards';
 import FilterBar from '../FilterBar/filterBar';
-import Grid from 'material-ui/GridList';
+import Grid from 'material-ui/GridList/GridList'
 import Header from '../Header/header';
 import axios from 'axios';
 import './store.css';
-// import CircularProgess from 'material-ui/CircularProgress'
+import CircularProgess from 'material-ui/CircularProgress'
 
 class Store extends Component {
   state = {
     products: []
   };
+
+  addToCart = () => {
+    console.log('clicked');
+  }
 
   componentDidMount() {
     axios.get('http://localhost:3060/api/products').then(res => {
@@ -30,6 +34,7 @@ class Store extends Component {
           price={item.price}
           description={item.description}
           size={item.size}
+          addItem={this.addToCart}
         />
       );
     });
@@ -43,11 +48,11 @@ class Store extends Component {
             <br />
             <br />
             <span>Loading...</span>
-            {/* <CircularProgess/>  */}
+            <CircularProgess/> 
           </section>
         ) : (
           <section className="prodcut-display">
-            <Grid xs={40}>{products}</Grid>
+            <Grid>{products}</Grid> 
           </section>
         )}
       </div>
