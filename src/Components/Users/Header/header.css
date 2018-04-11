@@ -1,9 +1,13 @@
 .App-header {
+  position: fixed;
   height: 10vh;
+  width: 100%;
+  z-index: 1;
   background-color: #e9edcb;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-decoration-line: none
 }
 .App-header link {
   color: #734b4b;

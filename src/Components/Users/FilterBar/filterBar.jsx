@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Slider from 'material-ui/Slider'
 import './filterBar.css';
 
 class filterBar extends Component {
   state = {
     userInputValue: '',
-    UserSelectValue: ''
+    UserSelectValue: '',
+    priceMin: '',
+    priceMax: ''
   };
   defineUserInput = e => {
     this.setState({
@@ -55,6 +58,9 @@ class filterBar extends Component {
         <br />
         <br />
         <br />
+          <p>Price Range</p>
+          <p>{this.state.pricemin}-{this.state.priceMax}</p>
+        <Slider></Slider>
         <button onClick={this.filterProducts}>Search</button>
       </div>
     );

@@ -9,7 +9,9 @@ import CircularProgess from 'material-ui/CircularProgress'
 
 class Store extends Component {
   state = {
-    products: []
+    products: [],
+    category: true,
+    searchTerm: ''
   };
 
   addToCart = () => {
@@ -48,6 +50,9 @@ class Store extends Component {
             <br />
             <br />
             <span>Loading...</span>
+            <br/>
+            <br/>
+            <br/>
             <CircularProgess/> 
           </section>
         ) : (

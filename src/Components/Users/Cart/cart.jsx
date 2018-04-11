@@ -15,10 +15,12 @@ class Cart extends Component {
     }
 
     render() {
+        const CartItems = this.state.productArr
         return (
             <div>
                 <Header/>
                 <ProductCard/>
+                <div className="cartItems">{CartItems}</div>
             </div>
         );
     }

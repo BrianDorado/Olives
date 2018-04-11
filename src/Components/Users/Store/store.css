@@ -9,8 +9,7 @@
   font-size: 30px;
 }
 .product-display {
-  display: flex;
-  
+  position: left
 }
 .item-display img{
  margin-top: 12vh;

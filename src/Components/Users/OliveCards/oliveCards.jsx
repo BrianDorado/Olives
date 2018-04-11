@@ -1,7 +1,7 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton'
-import {Link} from 'react-router-dom'
+import FlatButton from 'material-ui/FlatButton';
+import { Link } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 
 const style = {
@@ -15,7 +15,9 @@ const OliveCards = props => {
     <div className="item-display">
       <Paper style={style}>
         <img src={props.img} alt="product display" />
-        <Link to =''><FlatButton>Details</FlatButton></Link>
+        <Link to="`c/{:props.name}/details/`">
+          <FlatButton>Details</FlatButton>
+        </Link>
         <section>
           <h3>Product Name</h3>
           <p>{props.name}</p>
