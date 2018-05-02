@@ -1,0 +1,11 @@
+.app-store{
+ margin-top: 10vh;
+ position: fixed;
+ display: flex; 
+ flex-direction: column;
+ justify-content: space-between;
+ min-height: 90vh;
+}
+.app-store strong {
+    font-size: 35px;
+}

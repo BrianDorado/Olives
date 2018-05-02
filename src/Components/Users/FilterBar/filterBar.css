@@ -1,7 +1,7 @@
 .item-filter {
     height: 100vh;
     width: 15vw; 
-    position: fixed;
+    /* position: fixed; */
     float: left;
     display: flex;
     flex-direction: column;

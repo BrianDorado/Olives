@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 
-const style = {
+const CardStyling = {
   height: 350,
   width: 300,
   margin: 30
@@ -13,7 +13,7 @@ const style = {
 const OliveCards = props => {
   return (
     <div className="item-display">
-      <Paper style={style}>
+      <Paper style={CardStyling}>
         <img src={props.img} alt="product display" />
         <Link to="`c/{:props.name}/details/`">
           <FlatButton>Details</FlatButton>

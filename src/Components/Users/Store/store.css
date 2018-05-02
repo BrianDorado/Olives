@@ -9,8 +9,8 @@
   font-size: 30px;
 }
 .product-display {
-  position: left
+  min-height: 100vh;
 }
 .item-display img{
- margin-top: 12vh;
+ /* margin-top: 12vh; */
 }
