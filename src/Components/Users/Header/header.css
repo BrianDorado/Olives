@@ -7,8 +7,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  text-decoration-line: none
+  text-decoration-line: none;
 }
-.App-header link {
+.App-header Link {
   color: #734b4b;
 }

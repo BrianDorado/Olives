@@ -20,8 +20,7 @@ class App extends Component {
       <MuiThemeProvider>
             <BrowserRouter>
               <div className="App">
-                <Routes />  
-                
+              <Routes/>                 
                 <Route path = '/home' component={Home}/> 
               </div>
             </BrowserRouter>

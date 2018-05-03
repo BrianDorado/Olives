@@ -14,12 +14,9 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Switch>
-            <Route path="/store" component={Store} />
-          <Route path="/c" component={Header}>
             <Route path="/home" component={Home} />
             <Route path="/cart" component={Cart} />
             <Route path="/about" component={About} />
-          </Route>
         </Switch>
         <Switch>
           {/* <Route path = '/a' component={}> */}

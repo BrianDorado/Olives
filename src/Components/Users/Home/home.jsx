@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/header';
 import {Route} from 'react-router-dom';
+import axios from 'axios'
 import './home.css'
 
 class Home extends Component {
@@ -10,8 +11,12 @@ class Home extends Component {
     HonArr:[]
   }
 
-  componentDidMount = {
+  componentDidMount() {
+    axios.get('http://localhost:3060/api/products').then(res => {
+      this.setState({
 
+      })
+    })
   }
   render() {
     return (
@@ -30,7 +35,6 @@ class Home extends Component {
           </section>
         </section>
 
-        {/* <Route to = '/' Component ={}/> */}
       </div>
     );
   }
