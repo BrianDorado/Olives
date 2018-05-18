@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
+import CircularProgess from 'material-ui/CircularProgress'
 import ProductCards from '../OliveCards/oliveCards';
-import FilterBar from '../FilterBar/filterBar';
 import Grid from 'material-ui/GridList/GridList'
+import FilterBar from '../FilterBar/filterBar';
 import Header from '../Header/header';
 import axios from 'axios';
 import './store.css';
-import CircularProgess from 'material-ui/CircularProgress'
 
 class Store extends Component {
   state = {
     products: [],
     category: true,
-    searchTerm: ''
+    searchTerm: '',
+    numberedDisplayed: 10
   };
 
   addToCart = () => {
     console.log('clicked');
+  }
+
+  changeProductsdisplaynumber = () => {
+    this.setState({
+      numberedDisplayed: 0
+    })
   }
 
   componentDidMount() {
@@ -23,7 +30,9 @@ class Store extends Component {
       this.setState({
         products: res.data
       });
+      console.log(res.data)
     });
+    console.log('Mounted');
   }
 
   render() {

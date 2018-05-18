@@ -23,22 +23,21 @@ class Home extends Component {
         <section className="app-store">
           <section>
             <strong>Featured</strong>
+            <UserStatus.Consumer>
+              {context => (
+                <React.Fragment>
+                    <p>
+                      Hello {context.state.userName}!
+                    </p>
+                </React.Fragment>
+              )}
+            </UserStatus.Consumer>
           </section>
           <section>
             <strong>Recent</strong>
           </section>
           <section>
             <strong>Producer</strong>
-            <UserStatus.Consumer>
-              {context => (
-                <React.Fragment>
-                  <div>{context.state.test}</div>
-                  <button onClick={context.changeUserRoll}>Roll?</button>
-                  <button onClick={context.additionalFunction}>Fix!</button>
-                  <p>Authorized: {context.state.user_roll}</p>
-                </React.Fragment>
-              )}
-            </UserStatus.Consumer>
           </section>
         </section>
       </div>

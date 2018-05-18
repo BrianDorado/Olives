@@ -1,5 +1,5 @@
 .App-header {
-  position: fixed;
+  /* position: fixed; */
   height: 10vh;
   width: 100%;
   z-index: 1;
@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  text-decoration-line: none;
 }
 .App-header Link {
   color: #734b4b;

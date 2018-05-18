@@ -15,9 +15,9 @@ const OliveCards = props => {
     <div className="item-display">
       <Paper style={CardStyling}>
         <img src={props.img} alt="product display" />
-        <Link to="`c/{:props.name}/details/`">
+        {/* <Link to=``>
           <FlatButton>Details</FlatButton>
-        </Link>
+        </Link> */}
         <section>
           <h3>Product Name</h3>
           <p>{props.name}</p>

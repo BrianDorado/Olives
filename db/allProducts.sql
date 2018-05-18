@@ -1,4 +1,4 @@
 SELECT *
 FROM store_products
-order by id desc 
-limit 10
+order by id desc
+limit $1

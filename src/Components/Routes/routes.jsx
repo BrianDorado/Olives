@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Landing from '../Users/Landing/landing';
-import Home from '../Users/Home/home';
 import About from '../Users/About/about'
 import Cart from '../Users/Cart/cart';
 import Contact from '../Users/Contact/contact';
@@ -11,7 +10,6 @@ const Routes = () => {
     <div>
       <Switch>
         <Route exact path="/" component={Landing} />
-            <Route path="/home" component={Home} />
             <Route path="/cart" component={Cart} />
             <Route path="/about" component={About} />
         <Switch>

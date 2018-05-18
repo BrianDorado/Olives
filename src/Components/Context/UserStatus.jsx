@@ -8,7 +8,7 @@ class UserProvider extends React.Component {
     auth: false,
     user_id: null,
     user_roll: 0,
-    test: 'working'
+    userName: 'Brian'
   };
 
   userRollfix = () => {
@@ -18,7 +18,7 @@ class UserProvider extends React.Component {
   }
 
   componentDidMount(){
-    axios.get()
+    // axios.get()
   }
 
 

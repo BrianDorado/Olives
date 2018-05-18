@@ -4,7 +4,8 @@ const StoreStatus = React.createContext();
 
 class StoreProvider extends React.Component{
     state ={ 
-        cart: []
+        cart: [],
+        
     }
 
     render(){
@@ -15,3 +16,5 @@ class StoreProvider extends React.Component{
         )
     }
 }
+
+export {StoreProvider, StoreStatus as default}

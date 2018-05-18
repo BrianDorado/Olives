@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import LandingImage from './../../../media/images/GreenOlives.jpg';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import Home from '../Home/home'
 import './landing.css';
 
 class Landing extends Component {
+
+  autoRelocate = () => {
+    window.location.assign('/home')
+  }
+  componentDidMount(){
+    setTimeout(
+      this.autoRelocate, 10000)
+  }
   render() {
     return (
       <div className="landing-container">
@@ -12,6 +21,7 @@ class Landing extends Component {
         <Link to = '/home'>
           <h1 className='timeout'>Enter</h1>
         </Link>
+        <Route path = '/home' component={Home}/> 
       </div>
     );
   }

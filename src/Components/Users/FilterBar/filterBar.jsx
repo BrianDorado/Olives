@@ -6,8 +6,8 @@ class filterBar extends Component {
   state = {
     userInputValue: '',
     UserSelectValue: '',
-    priceMin: '',
-    priceMax: ''
+    priceMin: '0',
+    priceMax: '100'
   };
   defineUserInput = e => {
     this.setState({
@@ -44,6 +44,14 @@ class filterBar extends Component {
         />
         <br />
         <br />
+        <select name="display-number" id="display-number" defaultValue='10'>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="40">40</option>
+        </select>
+        <br/>
+        <br/>
         <select
           name="Category"
           id="Cat-id"
@@ -59,7 +67,7 @@ class filterBar extends Component {
         <br />
         <br />
           <p>Price Range</p>
-          <p>{this.state.pricemin}-{this.state.priceMax}</p>
+          <p>${this.state.priceMin} - ${this.state.priceMax}</p>
         <Slider></Slider>
         <button onClick={this.filterProducts}>Search</button>
       </div>
