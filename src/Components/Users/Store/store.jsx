@@ -15,14 +15,13 @@ class Store extends Component {
     numberedDisplayed: 10
   };
 
-  addToCart = () => {
-    console.log('clicked');
-  }
 
-  changeProductsdisplaynumber = () => {
+  changeProductsdisplaynumber = e => {
+    e.preventDefault()
     this.setState({
-      numberedDisplayed: 0
+      numberedDisplayed: e.target.value
     })
+    console.log('Number Displayed to', e.target.value);
   }
 
   componentDidMount() {
@@ -30,9 +29,7 @@ class Store extends Component {
       this.setState({
         products: res.data
       });
-      console.log(res.data)
     });
-    console.log('Mounted');
   }
 
   render() {
@@ -52,7 +49,7 @@ class Store extends Component {
     return (
       <div className="app-store">
         <Header />
-        <FilterBar />
+        <FilterBar changeDisplayedNumber={this.changeProductsdisplaynumber}/>
         {this.state.products.length === 0 ? (
           <section className="loading-screen">
             <br />
@@ -66,7 +63,7 @@ class Store extends Component {
           </section>
         ) : (
           <section className="prodcut-display">
-            <Grid>{products}</Grid> 
+            <Grid >{products}</Grid> 
           </section>
         )}
       </div>

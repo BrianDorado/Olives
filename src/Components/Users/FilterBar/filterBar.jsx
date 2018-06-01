@@ -19,11 +19,6 @@ class filterBar extends Component {
       UserSelectValue: e.target.value
     });
   };
-  filterProducts = () => {
-      console.log(this.state.userInputValue, this.state.UserSelectValue);
-    // this.defineUserInput();
-    // this.defineCategorySelection();
-  };
 
   render() {
     return (
@@ -44,7 +39,7 @@ class filterBar extends Component {
         />
         <br />
         <br />
-        <select name="display-number" id="display-number" defaultValue='10'>
+        <select name="display-number" id="display-number" defaultValue='10' onClick={this.props.changeDisplayedNumber}>
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="20">20</option>

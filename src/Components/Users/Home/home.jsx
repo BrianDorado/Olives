@@ -1,46 +1,45 @@
 import React, { Component } from 'react';
-import {GridList, GridTile} from 'material-ui/GridList'
+import { GridList, GridTile } from 'material-ui/GridList';
+import StoreStatus from '../../Context/StoreStatus';
 import UserStatus from '../../Context/UserStatus';
 import Header from '../Header/header';
 import axios from 'axios';
 import './home.css';
 
 class Home extends Component {
-  state = {
-    OilArr: [],
-    VinArr: [],
-    HonArr: []
-  };
+  
 
-  componentDidMount() {
-    axios.get('http://localhost:3060/api/products').then(res => {
-      this.setState({
-        // OilArr: res.data.filter(),
-        VinArr : res.data,
-        HonArr: res.data
-      });
-    });
-  }
   render() {
+
     return (
       <div>
         <Header />
         <section className="app-store">
           <section>
+            <br/>
+            <br/>
             <strong>Featured</strong>
             <UserStatus.Consumer>
               {context => (
                 <React.Fragment>
-                    <p>
-                      Hello {context.state.userName}!
-                    </p>
+                  <p>Hello {context.state.userName}!</p>
                 </React.Fragment>
               )}
             </UserStatus.Consumer>
           </section>
+          <br />
+          <br />
           <section>
             <strong>Recent</strong>
+            <StoreStatus.Consumer>
+              {context => (
+                <React.Fragment>
+                </React.Fragment>
+              )}
+            </StoreStatus.Consumer>
           </section>
+          <br/>
+          <br/>
           <section>
             <strong>Producer</strong>
           </section>

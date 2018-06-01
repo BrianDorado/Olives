@@ -1,14 +1,15 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import Details from '../Products/details';
 import Paper from 'material-ui/Paper';
 import './oliveCards.css'
 
 const CardStyling = {
-  height: 350,
-  // width: 375,
-  // margin: 30
+  height: 500,
+  width: 400,
+  margin: 30
 };
 
 const OliveCards = props => {
@@ -16,10 +17,10 @@ const OliveCards = props => {
     <div className="item-display">
       <Paper style={CardStyling}>
       <br/>
-        <img src={props.img} alt="product image" />
-        {/* <Link to=``>
+        <img src={props.img} alt="product" />
+        <Link to={{ pathname: '/prodcuts/details', state: { id: props.id, name: props.name}}} >
           <FlatButton>Details</FlatButton>
-        </Link> */}
+        </Link>
         <section>
           <br/>
           <h3>Product Name</h3>
@@ -35,6 +36,7 @@ const OliveCards = props => {
           Add to Cart
         </RaisedButton>
       </Paper>
+      <Route path = '/product/details' component={Details}/> 
     </div>
   );
 };

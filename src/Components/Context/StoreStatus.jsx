@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 const StoreStatus = React.createContext();
 
@@ -16,7 +17,18 @@ class StoreProvider extends React.Component{
         })
         console.log('added to cart!');
     }
+    filterProducts = e => {
 
+    }
+    
+
+    componentDidMount() {
+        axios.get('http://localhost:3060/api/products').then(res => {
+            this.setState({
+                prodcuts: res.data 
+            });
+        });
+    }
 
     render(){
         return(
