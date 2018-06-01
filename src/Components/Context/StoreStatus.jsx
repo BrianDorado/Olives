@@ -4,13 +4,23 @@ const StoreStatus = React.createContext();
 
 class StoreProvider extends React.Component{
     state ={ 
-        cart: [],
+        prodcuts: [],
+        cart: []
         
     }
+    
+    addProductToCart = item => {
+        let {cart} = this.state
+        this.setState({
+            cart: [item, ...cart]
+        })
+        console.log('added to cart!');
+    }
+
 
     render(){
         return(
-            <StoreStatus.Provider value={{state = this.state}}>
+            <StoreStatus.Provider value={{state: this.state}}>
                 {this.props.children}
             </StoreStatus.Provider>
         )

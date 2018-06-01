@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {GridList, GridTile} from 'material-ui/GridList'
 import UserStatus from '../../Context/UserStatus';
 import Header from '../Header/header';
 import axios from 'axios';
@@ -13,7 +14,11 @@ class Home extends Component {
 
   componentDidMount() {
     axios.get('http://localhost:3060/api/products').then(res => {
-      this.setState({});
+      this.setState({
+        // OilArr: res.data.filter(),
+        VinArr : res.data,
+        HonArr: res.data
+      });
     });
   }
   render() {

@@ -1,5 +1,5 @@
 .app-store {
-  min-height: 100vh;
+  min-height: 200vh;
   width: 100vw;
   background: -webkit-radial-gradient(center, ellipse cover, rgba(254, 254, 253, 1) 0%, rgba(220, 227, 196, 1) 42%, rgba(174, 191, 118, 1) 100%);
   background-attachment: fixed;
@@ -8,9 +8,7 @@
 .loading-screen span {
   font-size: 30px;
 }
-.product-display {
-  min-height: 100vh;
-}
+
 .item-display img{
  /* margin-top: 12vh; */
 }
