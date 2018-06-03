@@ -4,6 +4,8 @@ import StoreStatus from '../../Context/StoreStatus';
 import UserStatus from '../../Context/UserStatus';
 import Header from '../Header/header';
 import axios from 'axios';
+import {Route, Switch} from 'react-router-dom'
+import Details from '../Products/details'
 import './home.css';
 
 class Home extends Component {
@@ -44,6 +46,7 @@ class Home extends Component {
             <strong>Producer</strong>
           </section>
         </section>
+        
       </div>
     );
   }

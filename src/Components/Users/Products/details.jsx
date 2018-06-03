@@ -1,7 +1,7 @@
 import React from 'react';
 
-
 const Details = props => {
-  return <div>{props.name}</div>;
+  // let {name} = this.props.location.state
+  return <div>Product Name:</div>;
 };
 export default Details;

@@ -3,24 +3,9 @@ import Slider from 'material-ui/Slider'
 import './filterBar.css';
 
 class filterBar extends Component {
-  state = {
-    userInputValue: '',
-    UserSelectValue: '',
-    priceMin: '0',
-    priceMax: '100'
-  };
-  defineUserInput = e => {
-    this.setState({
-      userInputValue: e.target.value
-    });
-  };
-  defineCategorySelection = e => {
-    this.setState({
-      UserSelectValue: e.target.value
-    });
-  };
 
   render() {
+    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed} = this.props
     return (
       <div className="item-filter">
         <br />
@@ -32,14 +17,13 @@ class filterBar extends Component {
           type="text"
           name="UserInput"
           id="userInputValue"
-          defaultValue={this.state.userInputValue}
           placeholder="Search"
           onChange={this.defineUserInput}
           className="user-input-filter"
         />
         <br />
         <br />
-        <select name="display-number" id="display-number" defaultValue='10' onClick={this.props.changeDisplayedNumber}>
+        <select name="display-number" id="display-number" defaultValue='10' value={numberDisplayed} onChange={changeDisplayedNumber}>
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="20">20</option>
@@ -50,21 +34,26 @@ class filterBar extends Component {
         <select
           name="Category"
           id="Cat-id"
-          defaultValue={this.state.UserSelectValue}
-          onClick={this.defineCategorySelection}
+          onClick={changeCategoryDisplayed}
           className="CategorySelector"
         >
           <option value="Honey">Honey</option>
           <option value="Oil">Olive Oil</option>
           <option value="Vinegar"> Vinegar</option>
         </select>
+        <br/>
+        <br/>
+        <select name="size" id="size" defaultValue='8'>
+          <option value="8">8</option>
+          <option value="16">16</option>
+          <option value="32">32</option>
+        </select>
         <br />
         <br />
-        <br />
+        <br/>
           <p>Price Range</p>
-          <p>${this.state.priceMin} - ${this.state.priceMax}</p>
+          <p>${priceMin} - ${priceMax}</p>
         <Slider></Slider>
-        <button onClick={this.filterProducts}>Search</button>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { UserProvider } from './Components/Context/UserStatus';
 import { StoreProvider } from './Components/Context/StoreStatus';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider } from 'material-ui/styles';
 import Store from './Components/Users/Store/store';
 import Routes from './Components/Routes/routes';
@@ -18,8 +18,10 @@ class App extends Component {
             <StoreProvider>
               <div className="App">
                 <Routes />
-                <Route path="/home" component={Home} />
-                <Route path="/c/store" component={Store} />
+                <Switch>
+                  <Route path="/home" component={Home} />
+                  <Route path="/c/store" component={Store} />
+                </Switch>
               </div>
             </StoreProvider>
           </UserProvider>
