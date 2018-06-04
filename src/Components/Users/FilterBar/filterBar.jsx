@@ -5,7 +5,8 @@ import './filterBar.css';
 class filterBar extends Component {
 
   render() {
-    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed} = this.props
+    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed, category, userInputValue} = this.props
+    // console.log(this.props);
     return (
       <div className="item-filter">
         <br />
@@ -18,7 +19,7 @@ class filterBar extends Component {
           name="UserInput"
           id="userInputValue"
           placeholder="Search"
-          onChange={this.defineUserInput}
+          onChange={defineUserInput}
           className="user-input-filter"
         />
         <br />
@@ -34,8 +35,9 @@ class filterBar extends Component {
         <select
           name="Category"
           id="Cat-id"
-          onClick={changeCategoryDisplayed}
+          onChange={changeCategoryDisplayed}
           className="CategorySelector"
+          value={category}
         >
           <option value="Honey">Honey</option>
           <option value="Oil">Olive Oil</option>

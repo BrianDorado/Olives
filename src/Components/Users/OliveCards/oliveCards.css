@@ -1,3 +1,8 @@
-.item-display{
+/* .item-display{
     height: 200px
+} */
+.Product-img-primary {
+    height: 180px;
+    float: left;
+    padding: 5%
 }

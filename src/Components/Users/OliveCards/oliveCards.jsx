@@ -4,11 +4,12 @@ import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router-dom';
 import Details from '../Products/details';
 import Paper from 'material-ui/Paper';
+import CategoryImg from '../../../media/images/bottle-2022741_960_720.jpg'
 import './oliveCards.css'
 
 const CardStyling = {
-  height: 500,
-  width: 400,
+  // height: 500,
+  // width: 400,
   margin: 30
 };
 
@@ -18,10 +19,8 @@ const OliveCards = props => {
     <div className="item-display">
       <Paper style={CardStyling}>
       <br/>
-        <img src={img} alt="product" />
-        <Link to='/c/store/product/details' >
-          <FlatButton>Details</FlatButton>
-        </Link>
+        <img src={CategoryImg} alt="product" className='Product-img-primary' />
+        
         <section>
           <br/>
           <h3>Product Name</h3>
@@ -36,6 +35,9 @@ const OliveCards = props => {
         <RaisedButton primary={true} onClick={props.addItem}>
           Add to Cart
         </RaisedButton>
+        <Link to='/c/store/product/details' >
+          <FlatButton>Details</FlatButton>
+        </Link>
       </Paper>
     </div>
   );
