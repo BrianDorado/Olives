@@ -1,19 +1,20 @@
 import React from 'react';
-import ProductCard from '../OliveCards/oliveCards';  
+// import ProductCard from '../OliveCards/oliveCards';  
 import Header from '../Header/header';  
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
     return {
-        items: state.items
+        UserCart: state.UserCart
     };
 }
 
 class Cart extends React.Component {
     render() {
+        const CartContent = this.props.UserCart
         return (
             <div>
-                <Header/>
+                <Header CartItems={CartContent}/>
                 <section>Current Cart Items and actions</section>
                 <section></section>
                 <section></section>

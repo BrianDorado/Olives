@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import CircularProgess from 'material-ui/CircularProgress';
 import ProductCards from '../OliveCards/oliveCards';
-import Grid from 'material-ui/GridList/GridList';
 import { Route, Switch } from 'react-router-dom';
 import FilterBar from '../FilterBar/filterBar';
 import Details from '../Products/details';
+import {connect} from 'react-redux'
 import Header from '../Header/header';
 import axios from 'axios';
 import './store.css';
@@ -55,6 +55,7 @@ class Store extends Component {
   }
 
   render() {
+    console.log('Items returned:', this.props.items);
     let products = this.state.products.map(item => {
       return (
         <ProductCards
@@ -94,9 +95,7 @@ class Store extends Component {
           </section>
         ) : (
           <section className="product-display">
-            <Grid  >
             {products}
-            </Grid>
             <Switch>
               <Route path="product/details" component={Details} />
             </Switch>
@@ -107,4 +106,10 @@ class Store extends Component {
   }
 }
 
-export default Store;
+function mapStateToProps(state){
+  return {
+    items: state.items
+  }
+}
+
+export default connect(mapStateToProps)(Store);

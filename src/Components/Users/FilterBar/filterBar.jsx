@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'material-ui/Slider'
 import './filterBar.css';
 
 const filterBar = props => {
 
-    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed, category, userInputValue} = props
+    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed, category} = props
        return (
       <div className="item-filter">
         <br />

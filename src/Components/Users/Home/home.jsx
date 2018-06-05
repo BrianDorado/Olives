@@ -8,9 +8,6 @@ import './home.css';
 
 
 class Home extends React.Component {
-  componentDidMount(){
-    getStoreItems()
-  }
   render() {
     return (
       <div>
@@ -20,7 +17,7 @@ class Home extends React.Component {
             <br />
             <br />
             <strong>Featured</strong>
-            <GridList></GridList>
+            <GridList><GridTile></GridTile></GridList>
           </section>
           <br />
           <br />

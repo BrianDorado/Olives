@@ -1,9 +1,8 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import Details from '../Products/details';
 import { Link } from 'react-router-dom';
-import Paper from 'material-ui/Paper';
+// import Paper from 'material-ui/Paper';
 import './oliveCards.css';
 import lightGreen500 from 'material-ui/styles/colors';
 import CategoryImg from '../../../media/images/bottle-2022741_960_720.jpg';
@@ -15,10 +14,10 @@ const CardStyling = {
 };
 
 const OliveCards = props => {
-  let { img, name, description, price, size, id } = props;
+  let { img, name, description, price, size } = props;
   return (
     <div className="item-display">
-      <Paper style={CardStyling} className="Product-display-container">
+      <div className="Product-display-container">
         <br />
         <img src={CategoryImg} alt="product" className="Product-img-primary" />
         <section>
@@ -27,16 +26,16 @@ const OliveCards = props => {
           <br />
           <p>{name}</p>
           <br />
-          <article>{description}</article>
-          <br/>
-          <br/>
+          <article className="product-description">{description.slice(0, 30)} ...</article>
+          <br />
+          <br />
           <p>Price {price}</p>
           <br />
           <p>{size} oz</p>
           <br />
         </section>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <section className="user-actions">
           <RaisedButton backgroundColor={lightGreen500} onClick={props.addItem}>
             Add to Cart
@@ -45,7 +44,7 @@ const OliveCards = props => {
             <FlatButton>Details</FlatButton>
           </Link>
         </section>
-      </Paper>
+      </div>
     </div>
   );
 };
