@@ -2,43 +2,49 @@ import React, { Component } from 'react';
 import CircularProgess from 'material-ui/CircularProgress';
 import ProductCards from '../OliveCards/oliveCards';
 import Grid from 'material-ui/GridList/GridList';
-import FilterBar from '../FilterBar/filterBar';
-import Header from '../Header/header';
 import { Route, Switch } from 'react-router-dom';
+import FilterBar from '../FilterBar/filterBar';
 import Details from '../Products/details';
+import Header from '../Header/header';
 import axios from 'axios';
 import './store.css';
 
 class Store extends Component {
   state = {
     products: [],
-    category: '',
+    UserSelectValue: [],
     searchTerm: '',
-    numberedDisplayed: 10,
     userInputValue: '',
-    UserSelectValue: '',
-    priceMin: '0',
-    priceMax: '100'
+    category: 0,
+    numberedDisplayed: 10,
+    priceMin: 0,
+    priceMax: 100
   };
 
   changeProductsDisplayNumber = e => {
     this.setState({
       numberedDisplayed: e.target.value
     });
-    // console.log('Number Displayed to', e.target.value);
   };
 
   changeCategoryDisplayed = e => {
     this.setState({
       category: e.target.value
     });
-    console.log('Category:', this.state.category);
+    console.log('Category:', this.state.category, e.target);
   };
   defineUserInput = e => {
     this.setState({
       userInputValue: e.target.value
     });
   };
+
+  setPriceRange = e => {
+    this.setState({
+      priceMin: 0,
+      priceMax: 100
+    })
+  }
 
   componentDidMount() {
     axios.get('http://localhost:3060/api/products').then(res => {

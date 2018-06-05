@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
 import Header from '../Header/header';  
 import ProductCard from '../OliveCards/oliveCards';  
+import { connect } from 'react-redux';
+
+function mapStateToProps(state) {
+    return {
+        items: state.items
+    };
+}
 
 class Cart extends Component {
-    constructor(){
-        super()
-            this.state = {
-                productArr: null
-            }
-    }
-
-    componentDidMount(){
-         
-    }
-
     render() {
-        const CartItems = this.state.productArr
         return (
             <div>
-                <Header/>
-                <ProductCard/>
-                <div className="cartItems">{CartItems}</div>
+                
             </div>
         );
     }
 }
 
-export default Cart;
+export default connect(mapStateToProps,)(Cart);

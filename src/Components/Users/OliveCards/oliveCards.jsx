@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Details from '../Products/details';
 import Paper from 'material-ui/Paper';
 import CategoryImg from '../../../media/images/bottle-2022741_960_720.jpg'
+import lightGreen500 from 'material-ui/styles/colors';
 import './oliveCards.css'
 
 const CardStyling = {
@@ -32,7 +33,7 @@ const OliveCards = props => {
           <p>{size} oz</p>
           <br/>
         </section>
-        <RaisedButton primary={true} onClick={props.addItem}>
+        <RaisedButton secondary={true} onClick={props.addItem}  >
           Add to Cart
         </RaisedButton>
         <Link to='/c/store/product/details' >

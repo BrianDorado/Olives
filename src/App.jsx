@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { UserProvider } from './Components/Context/UserStatus';
-import { StoreProvider } from './Components/Context/StoreStatus';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider } from 'material-ui/styles';
+import { Provider } from 'react-redux';
 import Store from './Components/Users/Store/store';
 import Routes from './Components/Routes/routes';
 import Home from './Components/Users/Home/home';
@@ -15,7 +15,7 @@ class App extends Component {
       <MuiThemeProvider>
         <BrowserRouter>
           <UserProvider>
-            <StoreProvider>
+            <Provider>
               <div className="App">
                 {/* <Routes /> */}
                 <Switch>
@@ -23,7 +23,7 @@ class App extends Component {
                   <Route path="/c/store" component={Store} />
                 </Switch>
               </div>
-            </StoreProvider>
+            </Provider>
           </UserProvider>
         </BrowserRouter>
       </MuiThemeProvider>

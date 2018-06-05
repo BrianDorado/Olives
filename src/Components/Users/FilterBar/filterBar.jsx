@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import Slider from 'material-ui/Slider'
 import './filterBar.css';
 
-class filterBar extends Component {
+const filterBar = props => {
 
-  render() {
-    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed, category, userInputValue} = this.props
-    // console.log(this.props);
-    return (
+    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed, category, userInputValue} = props
+       return (
       <div className="item-filter">
         <br />
-        Narrow Your Search
+        Filter items
         <br />
         <br />
         <br />
@@ -39,9 +37,9 @@ class filterBar extends Component {
           className="CategorySelector"
           value={category}
         >
-          <option value="Honey">Honey</option>
-          <option value="Oil">Olive Oil</option>
-          <option value="Vinegar"> Vinegar</option>
+          <option value="1">Honey</option>
+          <option value="2">Olive Oil</option>
+          <option value="3"> Vinegar</option>
         </select>
         <br/>
         <br/>
@@ -59,6 +57,5 @@ class filterBar extends Component {
       </div>
     );
   }
-}
 
 export default filterBar;
