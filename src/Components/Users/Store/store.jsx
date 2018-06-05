@@ -94,9 +94,11 @@ class Store extends Component {
           </section>
         ) : (
           <section className="product-display">
-            <Grid>{products}</Grid>
+            <Grid  >
+            {products}
+            </Grid>
             <Switch>
-              <Route path="/c/store/product/details" component={Details} />
+              <Route path="product/details" component={Details} />
             </Switch>
           </section>
         )}

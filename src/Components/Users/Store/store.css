@@ -5,11 +5,6 @@
   background-attachment: fixed;
 }
 
-.product-display{
-  display: flex;
-  flex-wrap: wrap
-}
-
 .loading-screen span {
   font-size: 30px;
 }

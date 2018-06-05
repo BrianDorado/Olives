@@ -2,10 +2,10 @@
     height: 500px;
     margin: 10px;
 } */
-/* .Product-display-container{
-    height: 250px;
-    width: 350px;
-} */
+.Product-display-container{
+    height: 25vh;
+    width: 35vw; 
+}
 .Product-img-primary {
     height: 180px;
     float: left;

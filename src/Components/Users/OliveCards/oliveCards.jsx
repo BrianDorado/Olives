@@ -28,6 +28,8 @@ const OliveCards = props => {
           <p>{name}</p>
           <br />
           <article>{description}</article>
+          <br/>
+          <br/>
           <p>Price {price}</p>
           <br />
           <p>{size} oz</p>

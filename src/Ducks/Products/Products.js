@@ -1,5 +1,6 @@
 const initialState = {
-    items: []
+    items: [],
+    UserCart:[]
 }
 
 export function addToCart(item) {
@@ -12,7 +13,7 @@ export function addToCart(item) {
 export default function reducer(state= initialState, action){
     switch (action.type){
         case ADD_TO_CART:
-            return Object.assign({}, state, guest, [action.payload, ... guest])
+            return Object.assign({}, state, item, [action.payload, ... item])
     }
     return state 
 }

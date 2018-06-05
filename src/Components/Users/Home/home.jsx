@@ -39,9 +39,6 @@ class Home extends Component {
             <strong>Producer</strong>
           </section>
         </section>
-        <Switch>
-          <Route path="/c/store" component={Store} />
-        </Switch>
       </div>
     );
   }
