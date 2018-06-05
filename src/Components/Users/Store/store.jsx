@@ -93,7 +93,7 @@ class Store extends Component {
             <CircularProgess />
           </section>
         ) : (
-          <section className="prodcut-display">
+          <section className="product-display">
             <Grid>{products}</Grid>
             <Switch>
               <Route path="/c/store/product/details" component={Details} />

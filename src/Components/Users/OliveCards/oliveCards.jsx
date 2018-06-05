@@ -1,12 +1,12 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import { Link } from 'react-router-dom';
 import Details from '../Products/details';
+import { Link } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
-import CategoryImg from '../../../media/images/bottle-2022741_960_720.jpg'
+import './oliveCards.css';
 import lightGreen500 from 'material-ui/styles/colors';
-import './oliveCards.css'
+import CategoryImg from '../../../media/images/bottle-2022741_960_720.jpg';
 
 const CardStyling = {
   // height: 500,
@@ -15,30 +15,34 @@ const CardStyling = {
 };
 
 const OliveCards = props => {
-  let {img, name, price, size, id} = props 
+  let { img, name, description, price, size, id } = props;
   return (
     <div className="item-display">
-      <Paper style={CardStyling}>
-      <br/>
-        <img src={CategoryImg} alt="product" className='Product-img-primary' />
-        
+      <Paper style={CardStyling} className="Product-display-container">
+        <br />
+        <img src={CategoryImg} alt="product" className="Product-img-primary" />
         <section>
-          <br/>
+          <br />
           <h3>Product Name</h3>
-          <br/>
+          <br />
           <p>{name}</p>
-          <br/>
+          <br />
+          <article>{description}</article>
           <p>Price {price}</p>
-          <br/>
+          <br />
           <p>{size} oz</p>
-          <br/>
+          <br />
         </section>
-        <RaisedButton secondary={true} onClick={props.addItem}  >
-          Add to Cart
-        </RaisedButton>
-        <Link to='/c/store/product/details' >
-          <FlatButton>Details</FlatButton>
-        </Link>
+        <br/>
+        <br/>
+        <section className="user-actions">
+          <RaisedButton backgroundColor={lightGreen500} onClick={props.addItem}>
+            Add to Cart
+          </RaisedButton>
+          <Link to="/c/store/product/details">
+            <FlatButton>Details</FlatButton>
+          </Link>
+        </section>
       </Paper>
     </div>
   );
