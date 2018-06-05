@@ -7,12 +7,12 @@ const Header = () => {
     return (
       <div className="App-header">
        <img src={Logo} alt="App Logo" className='App-logo'/>
-          <Link to="/home">Home</Link>
-          <Link to="/c/store">Store</Link>
-          <Link to="/c/about">About</Link>
-          <Link to="/c/contact">Contact</Link>
-          <Link to="/c/cart">Cart</Link>
-          <Link to="/c/account">My Account</Link>
+          <Link to="/Home">Home</Link>
+          <Link to="/Store">Store</Link>
+          <Link to="/About">About</Link>
+          <Link to="/Contact">Contact</Link>
+          <Link to="/Cart">Cart</Link>
+          <Link to="/My-Account">My Account</Link>
       </div>
     );
 }

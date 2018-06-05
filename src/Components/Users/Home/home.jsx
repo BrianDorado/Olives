@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { GridList, GridTile } from 'material-ui/GridList';
-import StoreStatus from '../../Context/StoreStatus';
-import UserStatus from '../../Context/UserStatus';
+import { connect } from 'react-redux';
 import Header from '../Header/header';
-import axios from 'axios';
-import Store from '../Store/store';
-import { Route, Switch } from 'react-router-dom';
-import Details from '../Products/details';
 import './home.css';
 
-class Home extends Component {
+
+
+
+class Home extends React.Component {
+  componentDidMount(){
+    getStoreItems()
+  }
   render() {
     return (
       <div>
@@ -19,19 +20,12 @@ class Home extends Component {
             <br />
             <br />
             <strong>Featured</strong>
-            <UserStatus.Consumer>
-              {context => (
-                <React.Fragment>
-                  <p>Hello {context.state.userName}!</p>
-                </React.Fragment>
-              )}
-            </UserStatus.Consumer>
+            <GridList></GridList>
           </section>
           <br />
           <br />
           <section>
             <strong>Recent</strong>
-            <StoreStatus.Consumer>{context => <React.Fragment/>}</StoreStatus.Consumer>
           </section>
           <br />
           <br />
@@ -43,5 +37,10 @@ class Home extends Component {
     );
   }
 }
+function mapStateToProps(state) {
+  return {
+    items: state.items
+  };
+}
 
-export default Home;
+export default connect(mapStateToProps)(Home);

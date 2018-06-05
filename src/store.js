@@ -1,4 +1,4 @@
 import {createStore} from 'redux'
-import cart_Reducer from './Ducks/Cart/Cart'
+import products_Reducer from './Ducks/Products/Products'
  
-export default createStore(cart_Reducer)
+export default createStore(products_Reducer)

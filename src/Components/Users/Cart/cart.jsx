@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Header from '../Header/header';  
+import React from 'react';
 import ProductCard from '../OliveCards/oliveCards';  
+import Header from '../Header/header';  
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
@@ -9,11 +9,14 @@ function mapStateToProps(state) {
     };
 }
 
-class Cart extends Component {
+class Cart extends React.Component {
     render() {
         return (
             <div>
-                
+                <Header/>
+                <section>Current Cart Items and actions</section>
+                <section></section>
+                <section></section>
             </div>
         );
     }

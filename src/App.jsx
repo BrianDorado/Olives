@@ -1,5 +1,6 @@
 import React from 'react';
 
+import UserProfile from './Components/Users/UserProfile/UserProfile'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { UserProvider } from './Components/Context/UserStatus';
 import Contact from './Components/Users/Contact/contact';
@@ -8,29 +9,33 @@ import Store from './Components/Users/Store/store';
 import About from './Components/Users/About/about';
 import Home from './Components/Users/Home/home';
 import Cart from './Components/Users/Cart/cart';
-import { Provider } from 'react-redux';
+import { getStoreItems } from './Ducks/Products/Products'
 import './reset.css';
 import './App.css';
-import UserProfile from './Components/Users/UserProfile/UserProfile'
 
 class App extends React.Component {
+
+  componentDidMount(){
+    getStoreItems()
+  }
   render() {
     return (
       <MuiThemeProvider>
         <BrowserRouter>
           <UserProvider>
-            <Provider>
               <div className="App">
                 <Switch>
-                  <Route path = '/home' component={Home} />
-                  <Route path = '/store' component={Store} />
+                  <Route path = '/Home' component={Home} />
+                  <Route path = '/Store' component={Store} />
                   <Route path = '/About' component={About}/> 
                   <Route path = '/Contact' component={Contact}/> 
                   <Route path = '/Cart' component={Cart}/> 
                   <Route path = '/My-Account' component={UserProfile}/> 
                 </Switch>
+                <Switch>
+                  {/* <Route path = '/' component={}/>  */}
+                </Switch>
               </div>
-            </Provider>
           </UserProvider>
         </BrowserRouter>
       </MuiThemeProvider>
