@@ -47,11 +47,11 @@ class Store extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3060/api/products').then(res => {
-      this.setState({
-        products: res.data
-      });
-    });
+    // axios.get('http://localhost:3060/api/products').then(res => {
+    //   this.setState({
+    //     products: res.data
+    //   });
+    // });
   }
 
   render() {

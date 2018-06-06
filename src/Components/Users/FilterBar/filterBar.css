@@ -1,13 +1,13 @@
 .item-filter {
     height: 100vh;
     width: 15vw; 
-    /* position: fixed; */
     float: left;
     display: flex;
     flex-direction: column;
     padding: 2%;
     color: white;
-    background-color: #773A3A
+    background-color: #773A3A;
+    position: sticky; 
 }
 .user-input-filter {
   padding: 1%;

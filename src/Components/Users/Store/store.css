@@ -5,6 +5,8 @@
   background-attachment: fixed;
 }
 .product-display {
+  margin-left: 18vw;
+  /* margin-top: 10vh; */
   display: flex;
   flex-wrap: wrap
 }

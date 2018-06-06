@@ -12,7 +12,7 @@ const Header = props => {
           <Link to="/About">About</Link>
           <Link to="/Contact">Contact</Link>
           <Link to="/Cart">Cart 
-          {/* {props.CartItems && props.CartItems.length === 0 ? null : <div>({props.CartItems.length})</div>  }  */}
+          {/* {props.CartItems && props.CartItems.length === 0 ? null : <div>({props.CdartItems.length})</div>  }  */}
           </Link>
           <Link to="/My-Account">My Account</Link>
       </div>

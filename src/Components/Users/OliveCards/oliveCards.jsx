@@ -7,12 +7,6 @@ import './oliveCards.css';
 import lightGreen500 from 'material-ui/styles/colors';
 import CategoryImg from '../../../media/images/bottle-2022741_960_720.jpg';
 
-const CardStyling = {
-  // height: 500,
-  // width: 400,
-  margin: 30
-};
-
 const OliveCards = props => {
   let { img, name, description, price, size } = props;
   return (
@@ -40,7 +34,7 @@ const OliveCards = props => {
           <RaisedButton backgroundColor={lightGreen500} onClick={props.addItem}>
             Add to Cart
           </RaisedButton>
-          <Link to="/c/store/product/details">
+          <Link to="/product/details">
             <FlatButton>Details</FlatButton>
           </Link>
         </section>
