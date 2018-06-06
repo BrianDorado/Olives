@@ -18,8 +18,7 @@ import './App.css';
 class App extends React.Component {
 
   componentDidMount(){
-    getStoreItems()
-    console.log('App Mounted');
+    this.props.getStoreItems()
   }
 
   render() {
@@ -54,4 +53,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {getStoreItems})(App);

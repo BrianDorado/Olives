@@ -9,7 +9,6 @@ import './home.css';
 
 class Home extends React.Component {
   render() {
-    console.log('Home items to map:', this.props);
     return (
       <div>
         <Header />

@@ -5,21 +5,20 @@
 .Landing_image{
     height: 100vh;
 }
-
+.user-actions-landing {
+    display:flex;
+    justify-content: space-around;
+}
+.user-actions-landing h2 {
+    font-size: 40px;
+    margin-top: -65vh;
+}
 .welcome-text {
     font-size: 55px;
     margin-right: 20vw;
-    margin-top: 20vh;
+    margin-top: 17vh;
     position: absolute;
     top: 5px;
     right: 5px
 }
-.timeout{
-    font-size: 40px;
-    margin-right:25vw;
-    margin-top: 35vh;
-    position:absolute;
-    top:5px;
-    right:5px;
-    color: black
-}
+

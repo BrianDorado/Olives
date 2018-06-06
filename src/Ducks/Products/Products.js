@@ -1,22 +1,20 @@
-
 import axios from 'axios'
 
 const initialState = {
     items: [],
-    UserCart:[]
+    UserCart: []
 }
 const GET_ITEMS = 'GET_ITEMS'
 const ADD_TO_CART = 'ADD_TO_CART'
 
 export function getStoreItems() {
-     return dispatch => {
-         axios.get('http://localhost:3060/api/products').then(res => {
-            dispatch({
-                action: GET_ITEMS,
-                payload: res.data
-            })
+    const store_products = axios.get('http://localhost:3060/api/products').then(res => {
+        return res.data
     })
-    console.log('Target function invoked')
+    return {
+        type: GET_ITEMS,
+        payload: store_products
+    }
 }
 
 export function addToCart(item) {
@@ -26,12 +24,17 @@ export function addToCart(item) {
     }
 }
 
-export default function reducer(state= initialState, action){
-    switch (action.type){
-        case GET_ITEMS:
-            return Object.assign({}, state, {items: [...state.items, action.payload]}, console.log('Target function hit')) 
+export default function products_Reducer(state = initialState, action) {
+    switch (action.type) {
+        case GET_ITEMS + '_FULFILLED':
+            return Object.assign({}, state, {
+                items: action.payload
+            })
         case ADD_TO_CART:
-            return Object.assign({}, state, { UserCart: [...state.UserCart, action.payload] })
-         default: return state 
-        }
+            return Object.assign({}, state, {
+                UserCart: [...state.UserCart, action.payload]
+            })
+        default:
+            return state
+    }
 }

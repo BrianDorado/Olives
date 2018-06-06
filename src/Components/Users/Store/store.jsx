@@ -6,12 +6,10 @@ import FilterBar from '../FilterBar/filterBar';
 import Details from '../Products/details';
 import {connect} from 'react-redux'
 import Header from '../Header/header';
-import axios from 'axios';
 import './store.css';
 
 class Store extends Component {
   state = {
-    products: [],
     UserSelectValue: [],
     searchTerm: '',
     userInputValue: '',
@@ -46,17 +44,8 @@ class Store extends Component {
     })
   }
 
-  componentDidMount() {
-    // axios.get('http://localhost:3060/api/products').then(res => {
-    //   this.setState({
-    //     products: res.data
-    //   });
-    // });
-  }
-
   render() {
-    console.log('Items returned:', this.props.items);
-    let products = this.state.products.map(item => {
+    let products = this.props.items.map(item => {
       return (
         <ProductCards
           key={item.id}
@@ -82,7 +71,7 @@ class Store extends Component {
           category={this.state.category}
           userInputValue={this.state.userInputValue}
         />
-        {this.state.products.length === 0 ? (
+        {this.props.items=== 0 ? (
           <section className="loading-screen">
             <br />
             <br />
@@ -96,11 +85,12 @@ class Store extends Component {
         ) : (
           <section className="product-display">
             {products}
-            <Switch>
-              <Route path="product/details" component={Details} />
-            </Switch>
+            
           </section>
         )}
+        <Switch>
+          <Route path="product/details" component={Details} />
+        </Switch>
       </div>
     );
   }
