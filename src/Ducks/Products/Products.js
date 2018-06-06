@@ -5,18 +5,20 @@ const initialState = {
     items: [],
     UserCart:[]
 }
-const ADD_TO_CART = 'ADD_TO_CART'
 const GET_ITEMS = 'GET_ITEMS'
+const ADD_TO_CART = 'ADD_TO_CART'
 
 export function getStoreItems() {
-     axios.get('http://localhost:3060/api/products').then(res => {
-        return {
-            action: GET_ITEMS,
-            payload: res.data
-        }
+     return dispatch => {
+         axios.get('http://localhost:3060/api/products').then(res => {
+            dispatch({
+                action: GET_ITEMS,
+                payload: res.data
+            })
     })
     console.log('Target function invoked')
 }
+
 export function addToCart(item) {
     return {
         action: ADD_TO_CART,

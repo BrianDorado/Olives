@@ -11,7 +11,7 @@ import Store from './Components/Users/Store/store';
 import About from './Components/Users/About/about';
 import Home from './Components/Users/Home/home';
 import Cart from './Components/Users/Cart/cart';
-// import {connect} from 'react-redux'
+import {connect} from 'react-redux'
 import './reset.css';
 import './App.css';
 
@@ -19,6 +19,7 @@ class App extends React.Component {
 
   componentDidMount(){
     getStoreItems()
+    console.log('App Mounted');
   }
 
   render() {
@@ -47,6 +48,10 @@ class App extends React.Component {
   }
 }
 
+function mapStateToProps(state){
+  return {
+    items: state.items
+  }
+}
 
-
-export default App;
+export default connect(mapStateToProps)(App);
