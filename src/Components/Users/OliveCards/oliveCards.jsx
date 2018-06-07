@@ -23,7 +23,6 @@ const OliveCards = props => {
           <br />
           <article className="product-description">{description.slice(0, 30)}<strong>...</strong></article>
           <br />
-          <br />
           <p>Price {price.slice(0,3)}</p>
           <br />
           <p>{size} oz</p>

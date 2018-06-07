@@ -4,26 +4,21 @@ import ProductCards from '../OliveCards/oliveCards';
 import { Route, Switch } from 'react-router-dom';
 import FilterBar from '../FilterBar/filterBar';
 import Details from '../Products/details';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux';
 import Header from '../Header/header';
 import './store.css';
 
 class Store extends Component {
   state = {
     UserSelectValue: [],
-    searchTerm: '',
-    userInputValue: '',
+    searchTerm: 'produ',
+    NumberedDisplay: '',
     category: 0,
-    numberedDisplayed: 10,
     priceMin: 0,
     priceMax: 100
   };
-  
-  changeProductsDisplayNumber = e => {
-    this.setState({
-      numberedDisplayed: e.target.value
-    });
-  };
+
+  updateNumeberDisplayed = () => {};
 
   changeCategoryDisplayed = e => {
     this.setState({
@@ -33,18 +28,19 @@ class Store extends Component {
   };
   defineUserInput = e => {
     this.setState({
-      userInputValue: e.target.value
+      searchTerm: e.target.value
     });
   };
-  
+
   setPriceRange = e => {
     this.setState({
       priceMin: 0,
       priceMax: 100
-    })
-  }
-  
+    });
+  };
+
   render() {
+   
     let products = this.props.items.map(item => {
       return (
         <ProductCards
@@ -54,8 +50,8 @@ class Store extends Component {
           price={item.price}
           description={item.description}
           size={item.size}
+          quantity={item.qty}
           addItem={this.props.addToCart}
-          quantity={item.quantity}
         />
       );
     });
@@ -66,13 +62,13 @@ class Store extends Component {
         <FilterBar
           changeDisplayedNumber={this.changeProductsDisplayNumber}
           changeCategoryDisplayed={this.changeCategoryDisplayed}
-          defineUserInput={this.defineUserInput}
+          defineUserInput={this.filterItemsBySearchTerm}
+          userInputValue={this.state.userInputValue}
           priceMax={this.state.priceMax}
           priceMin={this.state.priceMin}
           category={this.state.category}
-          userInputValue={this.state.userInputValue}
         />
-        {this.props.items=== 0 ? (
+        {this.props.items.length === 0 ? (
           <section className="loading-screen">
             <br />
             <br />
@@ -86,21 +82,20 @@ class Store extends Component {
         ) : (
           <section className="product-display">
             {products}
-            
           </section>
         )}
         <Switch>
-          <Route path="product/details" component={Details} />
+          <Route path="/product/details" component={Details} />
         </Switch>
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
     items: state.items
-  }
+  };
 }
 
 export default connect(mapStateToProps)(Store);

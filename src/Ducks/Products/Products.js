@@ -5,7 +5,9 @@ const initialState = {
     UserCart: []
 }
 const GET_ITEMS = 'GET_ITEMS'
-const USER_CUSTOM_FILTER = 'USER_CUSTOM_FILTER'
+const FILTER_ITEMS_BY_VALUE = 'FILTER_ITEMS_BY_VALUE'
+const FILTER_ITEMS_BY_SIZE = 'FILTER_ITEMS_BY_SIZE'
+const FILTER_ITEMS_BY_CUSTOM = 'FILTER_ITEMS_BY_CUSTOM'
 const ADD_TO_CART = 'ADD_TO_CART'
 
 export function getStoreItems() {
@@ -18,12 +20,30 @@ export function getStoreItems() {
     }
 }
 
-export function filterItemsByUserInput(event) {
-        const filteredBySearch = this.state.UserCart.filter()
-        return {
-            type: USER_CUSTOM_FILTER,
-            payload: filteredBySearch
-        }
+export function filterItemsByValue(value) {
+    const filteredByValue = this.state.items.filter(item => {
+        item.price.includes(value)
+    })
+    return {
+        type: FILTER_ITEMS_BY_VALUE,
+        payload: filteredByValue
+    }
+}
+
+export function filterItemsBySize(value) {
+    const filteredBySize = this.state.items.filter(item => {
+        item.size.includes(value)
+    })
+    return {
+        type: FILTER_ITEMS_BY_SIZE,
+        payload: filteredBySize 
+    }
+}
+
+export function filterItemsByCustom(value) {
+    const filteredByCustom = this.state.items.filter(item => {
+        `${item.name} ${item.description}`.includes(value.toLowerCase())
+    })
 }
 
 export function addToCart(item) {
@@ -39,7 +59,7 @@ export default function products_Reducer(state = initialState, action) {
             return Object.assign({}, state, {
                 items: action.payload
             })
-        case USER_CUSTOM_FILTER:
+        case FILTER_ITEMS_BY_VALUE:
             return Object.assign({}, state, {
                 UserCart: [action.payload]
             })

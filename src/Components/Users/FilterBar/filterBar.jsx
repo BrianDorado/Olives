@@ -4,7 +4,8 @@ import './filterBar.css';
 
 const filterBar = props => {
 
-    let {changeDisplayedNumber, changeCategoryDisplayed, defineUserInput, priceMax, priceMin, numberDisplayed, category} = props
+    let {changeDisplayedNumber, changeCategoryDisplayed, filterItemsBySearch, userInputValue, priceMax, priceMin, numberDisplayed, category} = props
+    
        return (
       <div className="item-filter">
         <br />
@@ -17,7 +18,8 @@ const filterBar = props => {
           name="UserInput"
           id="userInputValue"
           placeholder="Search"
-          onChange={defineUserInput}
+          onChange={filterItemsBySearch}
+          value={userInputValue}
           className="user-input-filter"
         />
         <br />
