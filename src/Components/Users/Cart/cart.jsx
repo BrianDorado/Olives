@@ -3,24 +3,32 @@ import React from 'react';
 import Header from '../Header/header';  
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-    return {
-        UserCart: state.UserCart
-    };
-}
+
 
 class Cart extends React.Component {
     render() {
-        const CartContent = this.props.UserCart
+        const CartContent = this.props.UserCart.map(item => {
+            <div>
+               Cart Content {item.description}
+            </div>
+        })
         return (
             <div>
                 <Header CartItems={CartContent}/>
-                <section>Current Cart Items and actions</section>
+                <section>Current Cart Items and actions
+                    <div> {CartContent} </div>
+                </section>
                 <section></section>
                 <section></section>
             </div>
         );
     }
+}
+
+function mapStateToProps(state) {
+  return {
+    UserCart: state.UserCart
+  };
 }
 
 export default connect(mapStateToProps,)(Cart);

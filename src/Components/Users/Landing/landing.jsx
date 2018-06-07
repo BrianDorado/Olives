@@ -13,6 +13,7 @@ class Landing extends Component {
   //   setTimeout(
   //     this.autoRelocate, 10000)
   // }
+  
   render() {
     return (
       <div className="landing-container">

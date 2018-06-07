@@ -5,6 +5,7 @@ const initialState = {
     UserCart: []
 }
 const GET_ITEMS = 'GET_ITEMS'
+const USER_CUSTOM_FILTER = 'USER_CUSTOM_FILTER'
 const ADD_TO_CART = 'ADD_TO_CART'
 
 export function getStoreItems() {
@@ -15,6 +16,14 @@ export function getStoreItems() {
         type: GET_ITEMS,
         payload: store_products
     }
+}
+
+export function filterItemsByUserInput(event) {
+        const filteredBySearch = this.state.UserCart.filter()
+        return {
+            type: USER_CUSTOM_FILTER,
+            payload: filteredBySearch
+        }
 }
 
 export function addToCart(item) {
@@ -29,6 +38,10 @@ export default function products_Reducer(state = initialState, action) {
         case GET_ITEMS + '_FULFILLED':
             return Object.assign({}, state, {
                 items: action.payload
+            })
+        case USER_CUSTOM_FILTER:
+            return Object.assign({}, state, {
+                UserCart: [action.payload]
             })
         case ADD_TO_CART:
             return Object.assign({}, state, {

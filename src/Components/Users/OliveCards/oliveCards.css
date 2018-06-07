@@ -1,17 +1,23 @@
 .item-display{
     background-color: white;
     box-shadow: 6px 6px rgba(82, 82, 83, 0.377);
-    height: 350px;
-    width: 315px;
+    height: 40vh;
+    width: 23vw;
     margin: 25px;
 }
 
 .product-description {
     padding: 2%;
 }
-
+.product-general-info {
+    padding: 3%;
+}
 .Product-img-primary {
     height: 180px;
     float: left;
     padding: 5%
+}
+.user-card-actions {
+    display: flex;
+    justify-content: space-around;
 }

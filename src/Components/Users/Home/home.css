@@ -9,3 +9,11 @@
 .app-store strong {
     font-size: 35px;
 }
+.featured-products {
+    display: flex;
+    height: 20vh;
+}
+.recent-products {
+    display: flex;
+    height: 20vh;
+}

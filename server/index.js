@@ -7,10 +7,10 @@ const express = require('express'),
       massive = require('massive')
       products = require('./Controllers/Products/prodCont')
       app = express(),
+      stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
       port = process.env.SERVER_PORT;
 
-
-
+      
 // ========== MIDDLEWARE ========== //
 
 massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstance))
@@ -33,7 +33,6 @@ app.use(session({
 
 // === GET REQUESTS === //
 app.get('/api/products', products.getAllProducts)
-app.get('api/product-by/:caty')
 app.get('/api')
 
 

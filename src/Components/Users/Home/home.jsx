@@ -1,33 +1,53 @@
 import React from 'react';
-import { GridList, GridTile } from 'material-ui/GridList';
 import { connect } from 'react-redux';
 import Header from '../Header/header';
-import './home.css';
-
-
-
+import ProductCards from '../OliveCards/oliveCards';
+import './home.css'; 
 
 class Home extends React.Component {
   render() {
+    let featuredProducts = this.props.items.map(item => {
+      return (
+        <ProductCards
+          key={item.id}
+          img={item.image}
+          title={item.name}
+          description={item.description}
+          price={item.price}
+          size={item.size}
+        />
+      );
+    });
+
+    let recentProducts = this.props.items.map(item => {
+      return (
+        <ProductCards
+          key={item.id}
+          img={item.image}
+          name={item.detailed_name}
+          price={item.price}
+          description={item.description}
+          size={item.size}
+        />
+      );
+    });
+
     return (
       <div>
         <Header />
         <section className="app-store">
-          <section>
+          <section className="app-store-featured">
             <br />
             <br />
             <strong>Featured</strong>
-            <GridList><GridTile></GridTile></GridList>
+            <div className="featured-products">
+              {/* {featuredProducts} */}
+            </div>
           </section>
-          <br />
-          <br />
+
           <section>
             <strong>Recent</strong>
-          </section>
-          <br />
-          <br />
-          <section>
-            <strong>Producer</strong>
+            {/* <div className="recent-products"> {recentProducts} </div>Yev */}
           </section>
         </section>
       </div>

@@ -54,7 +54,7 @@ class Store extends Component {
           price={item.price}
           description={item.description}
           size={item.size}
-          addItem={this.addToCart}
+          addItem={this.props.addToCart}
         />
       );
     });
