@@ -5,7 +5,7 @@ module.exports ={
         const charge = stripe.charges.create({
             source: req.body.token.id,
             amount: req.body.amount,
-            currenct: 'usd',
+            currency: 'usd',
             description: 'stripe test charge'
         },
         function(err, charge) {

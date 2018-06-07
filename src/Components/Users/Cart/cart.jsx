@@ -3,6 +3,8 @@ import React from 'react';
 import axios from 'axios';
 import Header from '../Header/header';
 import { connect } from 'react-redux';
+import Logo from '../../../media/images/Logo.png'
+
 
 const stripePublicKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
 
@@ -16,12 +18,12 @@ class Cart extends React.Component {
     key: stripePublicKey,
     token: this.onToken,
     amount: 'this.state.amount',
-    currency: 'usd',
+    currency: 'usd', 
     locale: 'auto',
     zipcode: true,
-    name: 'this.state.userName',
+    name: 'Thank you for shopping with us!',
     description: 'Delicious olive oil, honey and Vinegar',
-    image: ''
+    image: Logo
   });
 
   onToken = token => {
@@ -38,6 +40,8 @@ class Cart extends React.Component {
 
   render() {
     let buttonLable = this.state.haveToken ? 'Thank you!' : `Pay $${(this.state.amount / 100).toFixed(2)}`;
+
+    
     let CartContent = this.props.UserCart.map(item => {
       <div>Cart Content {item.description}</div>;
     });

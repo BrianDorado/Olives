@@ -18,7 +18,7 @@ class Store extends Component {
     priceMin: 0,
     priceMax: 100
   };
-
+  
   changeProductsDisplayNumber = e => {
     this.setState({
       numberedDisplayed: e.target.value
@@ -36,14 +36,14 @@ class Store extends Component {
       userInputValue: e.target.value
     });
   };
-
+  
   setPriceRange = e => {
     this.setState({
       priceMin: 0,
       priceMax: 100
     })
   }
-
+  
   render() {
     let products = this.props.items.map(item => {
       return (
@@ -55,6 +55,7 @@ class Store extends Component {
           description={item.description}
           size={item.size}
           addItem={this.props.addToCart}
+          quantity={item.quantity}
         />
       );
     });

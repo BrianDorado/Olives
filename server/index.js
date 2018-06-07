@@ -38,17 +38,23 @@ app.get('/api')
 
 
 // === PUT REQUESTS === //
-
+app.post('/api/users/update-user-info')
 
 
 // === POST REQUESTS === //
 
-// ===== Stripe ===== //
-app.post('/api/payment', stripe_actions.stripe_post_req)
+app.post('/api/users/create-user')
+app.post('api/products/create-product')
 
 // === DELETE REQUESTS === //
 
 
+// ===== Stripe ===== //
+
+app.post('/api/payment', stripe_actions.stripe_post_req)
+
+
+// ===== Port ===== //
 
 app.listen(port || 3060, () => {
     console.log(`listening on port ${port}`)
