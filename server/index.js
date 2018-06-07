@@ -1,16 +1,17 @@
 require('dotenv').config()
 
 const express = require('express'),
-      bodyParser = require('body-parser'),
-      cors = require('cors'),
-      session = require('express-session'),
-      massive = require('massive')
-      products = require('./Controllers/Products/prodCont')
-      app = express(),
-      stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
-      port = process.env.SERVER_PORT;
+    app = express(),
+    bodyParser = require('body-parser'),
+    cors = require('cors'),
+    session = require('express-session'),
+    massive = require('massive'),
+    products = require('./Controllers/Products/prodCont'),
+    stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY),
+    stripe_actions = require('./Controllers/Stripe/stripe.js')
+    port = process.env.SERVER_PORT;
 
-      
+
 // ========== MIDDLEWARE ========== //
 
 massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstance))
@@ -20,9 +21,9 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstan
 app.use(bodyParser.json());
 app.use(cors());
 app.use(session({
-     secret: process.env.SESSION_SECRET,
-     saveUnitialized: false,
-     resave: false
+    secret: process.env.SESSION_SECRET,
+    saveUnitialized: false,
+    resave: false
 }));
 
 // ===== CUSTOM MIDDLEWARE ===== //
@@ -42,7 +43,8 @@ app.get('/api')
 
 // === POST REQUESTS === //
 
-
+// ===== Stripe ===== //
+app.post('/api/payment', stripe_actions.stripe_post_req)
 
 // === DELETE REQUESTS === //
 
