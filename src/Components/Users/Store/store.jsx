@@ -14,11 +14,24 @@ class Store extends Component {
     NumberedDisplay: '',
     category: 0,
     priceMin: 0,
-    priceMax: 100
+    priceMax: 100,
+    beginSlice: 0,
+    endSlice: 10
   };
 
-  updateNumeberDisplayed = () => {};
+  updateNumberDisplayed = e => {
+    this.setState({
+      endSlice: e.target.value
+    })
+  };
 
+  handlePageChange = () => {
+    this.setState({
+      beginSlice: this.state.endSlice + 1,
+      endSlice: this.state.endSlice + this.state.endSlice
+    })
+    console.log(this.state.endSlice);
+  }
 
   setPriceRange = e => {
     this.setState({
@@ -28,8 +41,11 @@ class Store extends Component {
   };
 
   render() {
-   
-    let products = this.props.items.slice(this.state.priceMax).map(item => {
+   let { beginSlice, endSlice} = this.state
+
+    // slicing as local placeholder for pagination  
+
+    let products = this.props.items.slice(beginSlice, endSlice).map(item => {
       return (
         <ProductCards
           key={item.id}
@@ -51,8 +67,9 @@ class Store extends Component {
           filterItemsByValue={this.props.filterItemsByValue}
           filterItemsByCustom={this.props.filterItemsByCustom}
           filterItemsBySize={this.props.filterItemsBySize}
-          changeDisplayedNumber={this.changeProductsDisplayNumber}
+          changeDisplayedNumber={this.updateNumberDisplayed}
           changeCategoryDisplayed={this.changeCategoryDisplayed}
+          numberDisplayed={this.endSlice}
           priceMax={this.state.priceMax}
           priceMin={this.state.priceMin}
           category={this.state.category}
@@ -71,6 +88,7 @@ class Store extends Component {
         ) : (
           <section className="product-display">
             {products}
+              <div className="button-container"><button onClick={this.handlePageChange}>Next page</button></div>
           </section>
         )}
         <Switch>
