@@ -5,13 +5,12 @@ import { Route, Switch } from 'react-router-dom';
 import FilterBar from '../FilterBar/filterBar';
 import Details from '../Products/details';
 import { connect } from 'react-redux';
+import {filterItemsByValue, filterItemsByCustom, filterItemsBySize} from '../../../Ducks/Products/Products'
 import Header from '../Header/header';
 import './store.css';
 
 class Store extends Component {
   state = {
-    UserSelectValue: [],
-    searchTerm: 'produ',
     NumberedDisplay: '',
     category: 0,
     priceMin: 0,
@@ -20,17 +19,6 @@ class Store extends Component {
 
   updateNumeberDisplayed = () => {};
 
-  changeCategoryDisplayed = e => {
-    this.setState({
-      category: e.target.value
-    });
-    console.log('Category:', this.state.category, e.target);
-  };
-  defineUserInput = e => {
-    this.setState({
-      searchTerm: e.target.value
-    });
-  };
 
   setPriceRange = e => {
     this.setState({
@@ -41,7 +29,7 @@ class Store extends Component {
 
   render() {
    
-    let products = this.props.items.map(item => {
+    let products = this.props.items.slice(this.state.priceMax).map(item => {
       return (
         <ProductCards
           key={item.id}
@@ -60,10 +48,11 @@ class Store extends Component {
       <div className="app-store">
         <Header />
         <FilterBar
+          filterItemsByValue={this.props.filterItemsByValue}
+          filterItemsByCustom={this.props.filterItemsByCustom}
+          filterItemsBySize={this.props.filterItemsBySize}
           changeDisplayedNumber={this.changeProductsDisplayNumber}
           changeCategoryDisplayed={this.changeCategoryDisplayed}
-          defineUserInput={this.filterItemsBySearchTerm}
-          userInputValue={this.state.userInputValue}
           priceMax={this.state.priceMax}
           priceMin={this.state.priceMin}
           category={this.state.category}
@@ -98,4 +87,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Store);
+export default connect(mapStateToProps, {filterItemsByValue, filterItemsByCustom, filterItemsBySize} )(Store);

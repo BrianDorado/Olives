@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import Header from '../Header/header';
 import { connect } from 'react-redux';
-import Logo from '../../../media/images/Logo.png';
+import Logo from '../../../media/images/fruits-1984336_960_720.png';
 import './cart.css';
 
 const stripePublicKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
@@ -21,8 +21,8 @@ class Cart extends React.Component {
     currency: 'usd',
     locale: 'auto',
     zipcode: true,
-    name: 'Thank you for shopping with us!',
-    description: 'Delicious olive oil, honey and Vinegar',
+    name: 'Thank you!',
+    description: 'Olive, Honey and Vinegar',
     image: Logo
   });
 
@@ -39,18 +39,21 @@ class Cart extends React.Component {
   };
 
   render() {
-    let buttonLable = this.state.haveToken ? 'Thank you!' : `Pay $${(this.state.amount / 100).toFixed(2)}`;
+    // let buttonLable = this.state.haveToken ? 'Thank you!' : `Pay $${(this.state.amount / 100).toFixed(2)}`;
 
     let CartContent = this.props.UserCart.map(item => {
-      <div>Cart Content {item.description}</div>;
+        return (
+            <div>Cart Content {item.description}</div>
+        )
     });
+
     return (
       <div>
         <Header CartItems={CartContent} />
         {/* <form className={this.props.user_role = 0 ? 'guest-checkout-form' : 'user-checkout-form'} */}
         <form className="guest-checkout-form" onSubmit={this.handleCheckout}>
           <div className="guest-checkout-form-body">
-            <div > {CartContent} Current Cart Items and actions</div>
+            <div > {CartContent}</div>
             <div>
               <button
                 className={this.state.haveToken ? 'stripeButton-disabled' : 'stripeButton'}

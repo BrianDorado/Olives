@@ -1,7 +1,7 @@
-import { React, Component } from 'react';
+import React from 'react';
 
 export default function(ComposedComponent) {
-  class Authentication extends Component {
+  class Authentication extends React.Component {
     render() {
       return <ComposedComponent {...this.props} />;
     }

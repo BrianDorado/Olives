@@ -4,8 +4,8 @@ import './filterBar.css';
 
 const filterBar = props => {
 
-    let {changeDisplayedNumber, changeCategoryDisplayed, filterItemsBySearch, userInputValue, priceMax, priceMin, numberDisplayed, category} = props
-    
+  let { changeDisplayedNumber, changeCategoryDisplayed, filterItemsByCustom, filterItemsBySize, priceMax, priceMin, numberDisplayed, category, } = props
+
        return (
       <div className="item-filter">
         <br />
@@ -18,12 +18,13 @@ const filterBar = props => {
           name="UserInput"
           id="userInputValue"
           placeholder="Search"
-          onChange={filterItemsBySearch}
-          value={userInputValue}
+          onChange={filterItemsByCustom}
           className="user-input-filter"
         />
         <br />
         <br />
+        <h4>Select Number of Results Displayed</h4>
+        <br/>
         <select name="display-number" id="display-number" defaultValue='10' value={numberDisplayed} onChange={changeDisplayedNumber}>
           <option value="5">5</option>
           <option value="10">10</option>
@@ -31,6 +32,8 @@ const filterBar = props => {
           <option value="40">40</option>
         </select>
         <br/>
+        <br/>
+        <h4>Select Products by Category</h4>
         <br/>
         <select
           name="Category"
@@ -45,7 +48,9 @@ const filterBar = props => {
         </select>
         <br/>
         <br/>
-        <select name="size" id="size" defaultValue='8'>
+        <h4>Select Products by size (oz)</h4>
+        <br/>
+        <select name="size" id="size" onChange={filterItemsBySize}>
           <option value="8">8</option>
           <option value="16">16</option>
           <option value="32">32</option>
