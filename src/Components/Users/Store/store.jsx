@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import FilterBar from '../FilterBar/filterBar';
 import Details from '../Products/details';
 import { connect } from 'react-redux';
-import {filterItemsByValue, filterItemsByCustom, filterItemsBySize} from '../../../Ducks/Products/Products'
+import { filterItemsByValue, filterItemsByCustom, filterItemsBySize, addToCart } from '../../../Ducks/Products/Products';
 import Header from '../Header/header';
 import './store.css';
 
@@ -22,16 +22,19 @@ class Store extends Component {
   updateNumberDisplayed = e => {
     this.setState({
       endSlice: e.target.value
-    })
+    });
   };
 
-  handlePageChange = () => {
+  increasePageNumber = () => {
     this.setState({
       beginSlice: this.state.endSlice + 1,
       endSlice: this.state.endSlice + this.state.endSlice
-    })
+    });
     console.log(this.state.endSlice);
-  }
+  };
+  decreasePageNumber = () => {
+    this.setState({});
+  };
 
   setPriceRange = e => {
     this.setState({
@@ -40,10 +43,15 @@ class Store extends Component {
     });
   };
 
-  render() {
-   let { beginSlice, endSlice} = this.state
+  addItemToCart = e => {
+    console.log('added:', e.target)
+    // this.props.addItem('added: ', e.target.value)
+  }
 
-    // slicing as local placeholder for pagination  
+  render() {
+    let { beginSlice, endSlice } = this.state;
+
+    // slicing as local placeholder for pagination
 
     let products = this.props.items.slice(beginSlice, endSlice).map(item => {
       return (
@@ -55,7 +63,7 @@ class Store extends Component {
           description={item.description}
           size={item.size}
           quantity={item.qty}
-          addItem={this.props.addToCart}
+          addToCart={this.addItemToCart}
         />
       );
     });
@@ -88,7 +96,10 @@ class Store extends Component {
         ) : (
           <section className="product-display">
             {products}
-              <div className="button-container"><button onClick={this.handlePageChange}>Next page</button></div>
+            <div className="button-container">
+              <button onClick={this.increasePageNumber}>Next page</button>
+              <button onClick={this.decreasePageNumber}>Previous Page</button>
+            </div>
           </section>
         )}
         <Switch>
@@ -105,4 +116,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {filterItemsByValue, filterItemsByCustom, filterItemsBySize} )(Store);
+export default connect(
+  mapStateToProps,
+  { filterItemsByValue, filterItemsByCustom, filterItemsBySize, addToCart }
+)(Store);

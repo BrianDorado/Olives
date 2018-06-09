@@ -14,12 +14,11 @@ const OliveCards = props => {
     <div className="item-display">
       <div className="Product-display-container">
         <br />
-        <img src={CategoryImg} alt="product" className="Product-img-primary" />
+        <img src={img ? img : CategoryImg} alt="product" className="Product-img-primary" />
         <section className='product-general-info'>
           <br />
-          <h3>Product Name</h3>
+          <h3>{name ? name : 'Product Name'}</h3>
           <br />
-          <p>{name}</p>
           <br />
           <article className="product-description">{description.slice(0, 30)}<strong>...</strong></article>
           <br />

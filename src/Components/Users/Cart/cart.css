@@ -4,11 +4,11 @@
 
 .guest-checkout-form-body {
     background-image: url('../../../media//images/guest-checkout-background.jpg');
+    margin: auto;
     background-repeat: no-repeat;
     background-position: fixed;
     background-size: contain;
     min-height: 90vh;
-    background-position-x: 10vw
 }
 
 .cart-content-body {

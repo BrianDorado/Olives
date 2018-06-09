@@ -44,11 +44,9 @@ export function filterItemsBySize(e) {
 export function filterItemsByCustom(e) {
     // move this filter into the reducer. This way it has access to the correct version of state. Remember, redux is immutable, so the most up-to-date version of 'state' is passed from the store into the reducer
 
-    // console.log('first clg', state.items);
     // const filteredByCustom = state.items.filter(item => {
     //       `${item.name} ${item.description}`.toLowerCase().indexOf(e.target.value.toLowerCase()) >= 0
     // })
-    // console.log(e.target.value, state, filteredByCustom);
 
     // instead of passing the result of a function, pass the value you're filtering with
     let val = e.target.value.toLowerCase();
@@ -60,7 +58,8 @@ export function filterItemsByCustom(e) {
     }
 }
 
-export function addToCart(item) {
+export function addToCart(e) {
+    let item = e.target
     return {
         action: ADD_TO_CART,
         payload: item
@@ -87,9 +86,9 @@ export default function products_Reducer(state = initialState, action) {
             }
         case FILTER_ITEMS_BY_CUSTOM:
             // you can run logic here, and it'll have access to the right state
-            // console.log('first clg', state.items);
+            console.log(state.items);
             const filteredByCustom = state.items.filter(item => {
-                `${item.name} ${item.description}`.toLowerCase().indexOf(action.payload) >= 0
+               return  `${item.name} ${item.description}`.toLowerCase().indexOf(action.payload) >= 0
             })
             console.log(action.payload, state, filteredByCustom);
 
@@ -102,9 +101,9 @@ export default function products_Reducer(state = initialState, action) {
             //     items: action.payload
             // }
         case ADD_TO_CART:
-            return Object.assign({}, state, {
+            return  {
                 UserCart: [...state.UserCart, action.payload]
-            })
+            }
         default:
             return state
     }
