@@ -5,16 +5,12 @@ import { Route, Switch } from 'react-router-dom';
 import FilterBar from '../FilterBar/filterBar';
 import Details from '../Products/details';
 import { connect } from 'react-redux';
-import { filterItemsByValue, filterItemsByCustom, filterItemsBySize, addToCart } from '../../../Ducks/Products/Products';
+import { filterItemsByValue, filterItemsByCustom, filterItemsBySize, filterItemsByCategory, addToCart } from '../../../Ducks/Products/Products';
 import Header from '../Header/header';
 import './store.css';
 
 class Store extends Component {
   state = {
-    NumberedDisplay: '',
-    category: 0,
-    priceMin: 0,
-    priceMax: 100,
     beginSlice: 0,
     endSlice: 10
   };
@@ -30,28 +26,20 @@ class Store extends Component {
       beginSlice: this.state.endSlice + 1,
       endSlice: this.state.endSlice + this.state.endSlice
     });
-    console.log(this.state.endSlice);
   };
+  
   decreasePageNumber = () => {
     this.setState({});
   };
 
-  setPriceRange = e => {
-    this.setState({
-      priceMin: 0,
-      priceMax: 100
-    });
-  };
-
-  addItemToCart = e => {
-    console.log('added:', e.target)
-    // this.props.addItem('added: ', e.target.value)
+  addItemToCart = ID => {
+    // this.props.addItem(ID)
   }
 
   render() {
     let { beginSlice, endSlice } = this.state;
 
-    // slicing as local placeholder for pagination
+    // slicing as placeholder for pagination
 
     let products = this.props.items.slice(beginSlice, endSlice).map(item => {
       return (
@@ -76,7 +64,7 @@ class Store extends Component {
           filterItemsByCustom={this.props.filterItemsByCustom}
           filterItemsBySize={this.props.filterItemsBySize}
           changeDisplayedNumber={this.updateNumberDisplayed}
-          changeCategoryDisplayed={this.changeCategoryDisplayed}
+          changeCategoryDisplayed={this.props.filteredByCategory}
           numberDisplayed={this.endSlice}
           priceMax={this.state.priceMax}
           priceMin={this.state.priceMin}
@@ -118,5 +106,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { filterItemsByValue, filterItemsByCustom, filterItemsBySize, addToCart }
+  { filterItemsByValue, filterItemsByCustom, filterItemsBySize, filterItemsByCategory, addToCart }
 )(Store);

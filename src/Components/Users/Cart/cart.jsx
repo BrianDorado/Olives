@@ -17,7 +17,7 @@ class Cart extends React.Component {
   stripeForm = window.StripeCheckout.configure({
     key: stripePublicKey,
     token: this.onToken,
-    amount: 'this.state.amount',
+    amount: this.state.amount,
     currency: 'usd',
     locale: 'auto',
     zipcode: true,

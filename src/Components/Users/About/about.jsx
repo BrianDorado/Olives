@@ -23,7 +23,7 @@ class About extends Component {
               width="560"
               height="315"
               src="https://www.youtube.com/embed/aieNV3V4b_s"
-              frameborder="0"
+              frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
               title='How-Olive-Oil-is-made'
@@ -38,7 +38,7 @@ class About extends Component {
               width="560"
               height="315"
               src="https://www.youtube.com/embed/ycdkhO-QEUU"
-              frameborder="0"
+              frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
               title='how-vinegar-is-made'
@@ -53,7 +53,8 @@ class About extends Component {
               width="560"
               height="315"
               src="https://www.youtube.com/embed/F_0SyWHsYSk"
-              frameborder="0"
+              frameBorder ='0'
+              order="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
               title='how-honey-is-made'

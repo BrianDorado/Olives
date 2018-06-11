@@ -1,20 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header/header'
 
-function mapStateToProps(state) {
-    return {
-
-    };
-}
 
 class UserProfile extends React.Component {
     render() {
         return (
             <div>
+                <Header/>
+                
                 
             </div>
         );
     }
+}
+
+function mapStateToProps(state) {
+  return {};
 }
 
 export default connect(

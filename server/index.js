@@ -34,17 +34,17 @@ app.use(session({
 
 // === GET REQUESTS === //
 app.get('/api/products', products.getAllProducts)
-app.get('/api')
+// app.get('/api')
 
 
 // === PUT REQUESTS === //
-app.post('/api/users/update-user-info')
+// app.post('/api/users/update-user-info')
 
 
 // === POST REQUESTS === //
 
-app.post('/api/users/create-user')
-app.post('api/products/create-product')
+// app.post('/api/users/create-user')
+// app.post('api/products/create-product')
 
 // === DELETE REQUESTS === //
 
@@ -56,6 +56,6 @@ app.post('/api/payment', stripe_actions.stripe_post_req)
 
 // ===== Port ===== //
 
-app.listen(port || 3060, () => {
+app.listen(port || 4000, () => {
     console.log(`listening on port ${port}`)
 })
