@@ -15,20 +15,25 @@ const OliveCards = props => {
       <div className="Product-display-container">
         <br />
         <img src={img ? img : CategoryImg} alt="product" className="Product-img-primary" />
-        <section className='product-general-info'>
+        <section className="product-general-info">
           <br />
           <h3>{name ? name : 'Product Name'}</h3>
           <br />
           <br />
-          <article className="product-description">{description.slice(0, 30)}<strong>...</strong></article>
+          <article className="product-description">
+            {description.slice(0, 30)}
+            <strong>...</strong>
+          </article>
           <br />
-          <p>Price {price.slice(0,3)}</p>
+          <p>Price {price.slice(0, 3)}</p>
           <br />
           <p>{size} oz</p>
         </section>
-        <div className='quantity-alerts' >
-        {quantity < 10 && quantity > 0 ? <div className='item-stock-alert'>This item is almost of of stock!</div> : null }
-        {quantity === 0 ? <div className='no-stock-alert'> This item is no longer in stock!</div>: null }
+        <div className="quantity-alerts">
+          {quantity < 10 && quantity > 0 ? (
+            <div className="item-stock-alert">This item is almost of of stock!</div>
+          ) : null}
+          {quantity === 0 ? <div className="no-stock-alert"> This item is no longer in stock!</div> : null}
         </div>
         <section className="user-card-actions">
           <RaisedButton backgroundColor={lightGreen500} onClick={addToCart}>

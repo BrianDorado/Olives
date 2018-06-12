@@ -6,6 +6,8 @@ class Contact extends Component {
         return (
             <div>
                 <Header/>
+                <section>Contact form</section>
+                <section>Contact details</section>
             </div>
         );
     }

@@ -59,6 +59,7 @@ export function filterItemsByCustom(e) {
 }
 
 export function addToCart(item) {
+  console.log('clicked');
   return {
     action: ADD_TO_CART,
     payload: item

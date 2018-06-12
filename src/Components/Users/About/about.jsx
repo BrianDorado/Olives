@@ -31,7 +31,7 @@ class About extends Component {
             <article>This is an article about how honey is made</article>
           </section>
                 <h3 className='about-vinegar-header' >
-                    <strong>Vinager</strong>
+                    <strong>Vinegar</strong>
                 </h3>
           <section className='about-vinegar-body' >
             <iframe

@@ -6,31 +6,9 @@ import './home.css';
 
 class Home extends React.Component {
   render() {
-    // let featuredProducts = this.props.items.map(item => {
-    //   return (
-    //     <ProductCards
-    //       key={item.id}
-    //       img={item.image}
-    //       title={item.name}
-    //       description={item.description}
-    //       price={item.price}
-    //       size={item.size}
-    //     />
-    //   );
-    // });
-
-    // let recentProducts = this.props.items.map(item => {
-    //   return (
-    //     <ProductCards
-    //       key={item.id}
-    //       img={item.image}
-    //       name={item.detailed_name}
-    //       price={item.price}
-    //       description={item.description}
-    //       size={item.size}
-    //     />
-    //   );
-    // });
+    let featured = this.props.items.filter( item =>  item.featured )
+    
+    let recent = this.props.items.filter ( item => {})
 
     return (
       <div>
@@ -41,13 +19,16 @@ class Home extends React.Component {
             <br />
             <strong>Featured</strong>
             <div className="featured-products">
-              {/* {featuredProducts} */}
+              {featured.map(item => {
+                <div>
+                  
+                </div>
+              })}
             </div>
           </section>
 
           <section>
             <strong>Recent</strong>
-            {/* <div className="recent-products"> {recentProducts} </div>Yev */}
           </section>
         </section>
       </div>

@@ -27,14 +27,14 @@ class Store extends Component {
       endSlice: this.state.endSlice + this.state.endSlice
     });
   };
-  
+
   decreasePageNumber = () => {
-    this.setState({});
+    this.setState({
+      beginSlice: this.state.endSlice,
+      endSlice: this.state.endSlice
+    });
   };
 
-  addItemToCart = ID => {
-    // this.props.addItem(ID)
-  }
 
   render() {
     let { beginSlice, endSlice } = this.state;
@@ -51,7 +51,7 @@ class Store extends Component {
           description={item.description}
           size={item.size}
           quantity={item.qty}
-          addToCart={this.addItemToCart}
+          addToCart={this.props.addToCart}
         />
       );
     });

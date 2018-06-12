@@ -13,6 +13,9 @@ const initialState= {
     }
 }
 
+const GET_ALL_USERS = 'GET_ALL_USERS';
+const GET_USER_BY_ID = 'GET_USER_BY_EMAIL'
+
 export default function user_Reducer(state = initialState, action){
     switch (action.type) {
         case value:
