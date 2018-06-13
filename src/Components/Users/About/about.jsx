@@ -8,12 +8,6 @@ class About extends Component {
       <div className='about-container' >
         <Header />
         <br/>
-        <br/>
-        <br/>
-        <h1><strong>!!!!INCOMPLETE STYLING!!!!</strong></h1>
-        <br/>
-        <br/>
-        <br/>
         <h3 className='about-oil-header' >
           <strong>Olive Oil</strong>
         </h3>
@@ -28,7 +22,7 @@ class About extends Component {
               allowFullScreen
               title='How-Olive-Oil-is-made'
             />
-            <article>This is an article about how honey is made</article>
+            <article>This is an article about how the olive oil is made</article>
           </section>
                 <h3 className='about-vinegar-header' >
                     <strong>Vinegar</strong>
@@ -43,7 +37,7 @@ class About extends Component {
               allowFullScreen
               title='how-vinegar-is-made'
             />
-            <article>This is an article about how vinegar is made</article>
+            <article>This is an article about how the vinegar is made</article>
           </section>
             <h3 className='about-honey-header' >
                 <strong>Honey</strong>
@@ -59,7 +53,7 @@ class About extends Component {
               allowFullScreen
               title='how-honey-is-made'
             />
-            <article>This is an article about how honey is made</article>
+            <article>This is an article about how the honey is made</article>
           </section>
         
       </div>

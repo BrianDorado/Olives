@@ -10,6 +10,7 @@ const FILTER_ITEMS_BY_SIZE = 'FILTER_ITEMS_BY_SIZE';
 const FILTER_ITEMS_BY_CATEGORY = 'FILTER_ITEMS_BY_CATEGORY';
 const FILTER_ITEMS_BY_CUSTOM = 'FILTER_ITEMS_BY_CUSTOM';
 const ADD_TO_CART = 'ADD_TO_CART';
+const REMOVE_FROM_CART= 'REMOVE_FROM_CART'
 
 export function getStoreItems() {
   const store_products = axios.get('http://localhost:4000/api/products').then(res => {
@@ -66,6 +67,13 @@ export function addToCart(item) {
   };
 }
 
+export function removedFromCart(item){
+  return {
+    action: REMOVE_FROM_CART,
+    payload: item
+  }
+}
+
 export default function products_Reducer(state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS + '_FULFILLED':
@@ -96,7 +104,7 @@ export default function products_Reducer(state = initialState, action) {
     case FILTER_ITEMS_BY_CUSTOM:
       // const filteredByCustom = state.items.filter(item => {
       //   return `${item.name} ${item.description}`.toLowerCase().indexOf(action.payload) >= 0;
-      // });
+      // }); 
 
       return {
         ...state,

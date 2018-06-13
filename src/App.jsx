@@ -37,6 +37,7 @@ class App extends React.Component {
                   <Route exact path = '/' component={Landing}/> 
                 </Switch>
                 <Switch>
+                  {/* auth and Admin routes */}
                   {/* <Route path = '/' component={}/>  */}
                 </Switch>
               </div>

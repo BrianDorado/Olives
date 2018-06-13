@@ -8,15 +8,21 @@ class UserProfile extends React.Component {
         return (
             <div>
                 <Header/>
-                
-                
+                <section>
+                    <div>User Name</div>
+                    <div>User_data</div>
+                    <div>Past orders?</div>
+                {this.state.user_data.role === 3 ? <div> Is not admin</div> : null}
+                </section>
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-  return {};
+  return {
+      state
+  };
 }
 
 export default connect(

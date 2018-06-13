@@ -13,21 +13,15 @@ const OliveCards = props => {
   return (
     <div className="item-display">
       <div className="Product-display-container">
-        <br />
         <img src={img ? img : CategoryImg} alt="product" className="Product-img-primary" />
         <section className="product-general-info">
-          <br />
-          <h3>{name ? name : 'Product Name'}</h3>
-          <br />
-          <br />
+          <h3 className='product-name' >{name ? name : 'Product Name'}</h3>
           <article className="product-description">
             {description.slice(0, 30)}
             <strong>...</strong>
           </article>
-          <br />
-          <p>Price {price.slice(0, 3)}</p>
-          <br />
-          <p>{size} oz</p>
+          <p className='product-price-display'>Price {price.slice(0, 3)}</p>
+          <p className='product-size-display' >{size} oz</p>
         </section>
         <div className="quantity-alerts">
           {quantity < 10 && quantity > 0 ? (
