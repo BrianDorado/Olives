@@ -23,7 +23,7 @@ const filterBar = props => {
         />
         <br />
         <br />
-        <h4>Select Number of Results Displayed</h4>
+        <h4>Results per page</h4>
         <br/>
         <select name="display-number" id="display-number" defaultValue='10' onChange={changeDisplayedNumber}>
           <option value="5">5</option>

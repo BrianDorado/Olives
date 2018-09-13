@@ -23,6 +23,7 @@ class Home extends React.Component {
 
           <section>
             <strong>Recent</strong>
+            {/* Also recent uploads by favorite shops */}
           </section>
         </section>
       </div>
@@ -31,7 +32,8 @@ class Home extends React.Component {
 }
 function mapStateToProps(state) {
   return {
-    items: state.items.filter(item => item.featured)
+    // sql table needs to be updated 
+    items: state.items.filter(item => item.featured).slice(0,20)
   };
 }
 

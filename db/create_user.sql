@@ -1,0 +1,1 @@
+insert into users ( id, user_name, email, country_code, state, zip, street, house_number ) values ($1, $2, $3, $4, $5, $6, $7)

@@ -12,7 +12,7 @@ class UserProfile extends React.Component {
                     <div>User Name</div>
                     <div>User_data</div>
                     <div>Past orders?</div>
-                {this.state.user_data.role === 3 ? <div> Is not admin</div> : null}
+                {this.state.user_data.role === 0 ? <div> Is not admin</div> : null}
                 </section>
             </div>
         );

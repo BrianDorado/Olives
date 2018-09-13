@@ -5,7 +5,6 @@ import Header from '../Header/header';
 import { connect } from 'react-redux';
 import Logo from '../../../media/images/fruits-1984336_960_720.png';
 import './cart.css';
-
 const stripePublicKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY;
 
 class Cart extends React.Component {

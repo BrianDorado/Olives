@@ -8,6 +8,10 @@ class About extends Component {
       <div className='about-container' >
         <Header />
         <br/>
+
+        <br/>
+        <a href="http://Github.com/BrianDorado/Olives">Github</a>
+        <br/>
         <h3 className='about-oil-header' >
           <strong>Olive Oil</strong>
         </h3>

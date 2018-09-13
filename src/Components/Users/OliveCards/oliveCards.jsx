@@ -1,11 +1,10 @@
 import React from 'react';
 
-import lightGreen500 from 'material-ui/styles/colors';
+import {lightGreen500} from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router-dom';
-
-import CategoryImg from '../../../media/images/bottle-2022741_960_720.jpg';
+import OliveDefaultImg from '../../../media/images/bottle-2022741_960_720.jpg';
 import './oliveCards.css';
 
 const OliveCards = props => {
@@ -13,7 +12,7 @@ const OliveCards = props => {
   return (
     <div className="item-display">
       <div className="Product-display-container">
-        <img src={img ? img : CategoryImg} alt="product" className="Product-img-primary" />
+        <img src={img ? img : OliveDefaultImg} alt="product" className="Product-img-primary" />
         <section className="product-general-info">
           <h3 className='product-name' >{name ? name : 'Product Name'}</h3>
           <article className="product-description">
@@ -30,10 +29,11 @@ const OliveCards = props => {
           {quantity === 0 ? <div className="no-stock-alert"> This item is no longer in stock!</div> : null}
         </div>
         <section className="user-card-actions">
-          <RaisedButton backgroundColor={lightGreen500} onClick={addToCart}>
+          <RaisedButton backgroundColor={lightGreen500} onClick={ () => addToCart(id)}>
             Add to Cart
           </RaisedButton>
-          <Link to="/product/details">
+          {/* CSS transition to tile enlargement with details? */}
+          <Link>
             <FlatButton>Details</FlatButton>
           </Link>
         </section>

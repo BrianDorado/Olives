@@ -30,8 +30,8 @@ class Store extends Component {
 
   decreasePageNumber = () => {
     this.setState({
-      beginSlice: this.state.endSlice,
-      endSlice: this.state.endSlice
+      beginSlice: this.state.beginSlice - (this.state.beginSlice - this.state.endSlice) ,
+      endSlice: this.state.endSlice - this.state.beginSlice
     });
   };
 
@@ -98,6 +98,7 @@ class Store extends Component {
   }
 }
 
+//  this is maping state to props
 function mapStateToProps(state) {
   return {
     items: state.items

@@ -3,10 +3,10 @@ require('dotenv').config()
 const express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    cors = require('cors'),
     session = require('express-session'),
     massive = require('massive'),
     products = require('./Controllers/Products/prodCont'),
+    user = require('./Controllers/Users/user_controllers')
     stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY),
     stripe_actions = require('./Controllers/Stripe/stripe.js')
     port = process.env.SERVER_PORT;
@@ -19,7 +19,6 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstan
 // ===== TOP LEVEL MIDDLEWARE ===== //
 
 app.use(bodyParser.json());
-app.use(cors());
 app.use(session({
     secret: process.env.SESSION_SECRET,
     saveUnitialized: false,
@@ -43,8 +42,8 @@ app.get('/api/products', products.getAllProducts)
 
 // === POST REQUESTS === //
 
-// app.post('/api/users/create-user')
-// app.post('api/products/create-product')
+app.post('/api/users/create-user')
+app.post('api/products/create-product', products.createProduct)
 
 // === DELETE REQUESTS === //
 

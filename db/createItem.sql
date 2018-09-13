@@ -1,0 +1,1 @@
+insert into store_products (product_name, category) values ($1, $2)
